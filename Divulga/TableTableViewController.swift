@@ -14,6 +14,9 @@ class TableTableViewController: UITableViewController {
     
     var events = [Event]()
     var databasePath = NSString()
+   
+    
+
     
     func loadSampleEvents() {
         
@@ -26,7 +29,7 @@ class TableTableViewController: UITableViewController {
         events += [event1, event2]
         
     }
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
   

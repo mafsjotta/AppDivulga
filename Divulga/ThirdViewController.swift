@@ -21,10 +21,11 @@ class ThirdViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func logOutButtonTapped(sender: AnyObject) {
+
+    @IBAction func logOuButtonTapped(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn");
         NSUserDefaults.standardUserDefaults().synchronize();
-        self.performSegueWithIdentifier("logInView", sender: self)
+        self.performSegueWithIdentifier("logOutView", sender: self)
     }
 
     /*

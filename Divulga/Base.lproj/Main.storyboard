@@ -163,10 +163,10 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Log Out"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="162" y="332" width="55" height="30"/>
+                                    <rect key="frame" x="325" y="20" width="55" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="logOutButtonTapped:" destination="hBK-mI-1pp" eventType="touchUpInside" id="geN-LI-8ep"/>
+                                    <action selector="logOuButtonTapped:" destination="hBK-mI-1pp" eventType="touchUpInside" id="0A0-lR-S38"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -183,6 +183,9 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="zwX-8I-H2g"/>
+                    <connections>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="logOutView" id="VsH-ZG-pbo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dmo-Tt-YXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -242,14 +245,6 @@
                                     <rect key="frame" x="20" y="192" width="132" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nY-CU-J9P">
-                                <rect key="frame" x="102" y="419" width="397" height="30"/>
-                                <color key="tintColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Changed my mind. I have an account..."/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="68" y="342" width="265" height="30"/>
-                                </variation>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDF-oZ-BXG">
                                 <rect key="frame" x="257" y="56" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -272,6 +267,17 @@
                                     <action selector="registerButtonTapped:" destination="5Iy-dx-3iW" eventType="touchUpInside" id="5ih-8i-CPB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nY-CU-J9P">
+                                <rect key="frame" x="168" y="413" width="265" height="30"/>
+                                <color key="tintColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Changed my mind. I have an account..."/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="68" y="342" width="265" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="mindChangedButtonTapped:" destination="5Iy-dx-3iW" eventType="touchUpInside" id="Zdk-QD-Kv9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -283,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcB-UV-zdz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-690" y="1446"/>
+            <point key="canvasLocation" x="-690" y="1487"/>
         </scene>
         <!--Login Page View Controller-->
         <scene sceneID="c9B-z7-wSF">
@@ -353,7 +359,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9A-ec-tao">
-                                <rect key="frame" x="279" y="349" width="42" height="30"/>
+                                <rect key="frame" x="272" y="349" width="57" height="30"/>
                                 <color key="backgroundColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Log In"/>

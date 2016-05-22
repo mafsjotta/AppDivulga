@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6C8BFB6CE82DB3EF036E71848D55A535372307E7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BF2C6BA99931AA844F5B9E1700AC18E469E6B31E" : 0,
+    "6C8BFB6CE82DB3EF036E71848D55A535372307E7" : 0,
+    "04101981B66E318109934C9516F88D824BB96459" : 0,
+    "A39B8206586AE844EA5AB53A68D12FD1DBB58A57" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0EC62777-0177-424A-931E-6125C75A106D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BF2C6BA99931AA844F5B9E1700AC18E469E6B31E" : "..",
+    "6C8BFB6CE82DB3EF036E71848D55A535372307E7" : "Divulga\/",
+    "04101981B66E318109934C9516F88D824BB96459" : "..\/Documents\/fmdb",
+    "A39B8206586AE844EA5AB53A68D12FD1DBB58A57" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Divulga",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Divulga.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ccgus\/fmdb.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "04101981B66E318109934C9516F88D824BB96459"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/gitlab.com\/mafsjotta\/LID.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6C8BFB6CE82DB3EF036E71848D55A535372307E7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/gitlab.com\/JSenart\/Divulga.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A39B8206586AE844EA5AB53A68D12FD1DBB58A57"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mafsjotta\/cenas-LID.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BF2C6BA99931AA844F5B9E1700AC18E469E6B31E"
+    }
+  ]
+}

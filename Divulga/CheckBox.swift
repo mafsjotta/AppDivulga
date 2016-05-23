@@ -8,11 +8,15 @@
 
 import UIKit
 
+
+
 class CheckBox: UIButton {
     
     //images
     let checkedImage = UIImage(named: "checked_checkbox")
     let unCheckedImage = UIImage(named: "unchecked_checkbox")
+    
+    
     
     //bool propety
     @IBInspectable var isChecked:Bool = false{
@@ -20,6 +24,7 @@ class CheckBox: UIButton {
             self.updateImage()
         }
     }
+    
     
     
     override func awakeFromNib() {

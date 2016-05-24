@@ -57,7 +57,6 @@
                                     <outlet property="nameLabel" destination="T2y-gj-jLk" id="4KJ-VR-LQG"/>
                                     <outlet property="orgLabel" destination="ooF-PL-Zlz" id="M1r-Ty-Vru"/>
                                     <outlet property="photoImageView" destination="bwV-0W-5FI" id="qGn-MB-4Cv"/>
-                                    <segue destination="9pv-A4-QxB" kind="show" id="nh1-Yz-RVf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -83,6 +82,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="P5L-Qq-bcc" id="bdJ-Ke-Vvg"/>
+                        <segue destination="SDa-6F-AUi" kind="showDetail" id="MSU-eg-qoT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqF-Gm-SPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,49 +98,21 @@
             </objects>
             <point key="canvasLocation" x="1407" y="-320"/>
         </scene>
-        <!--Events-->
+        <!--Details-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Divulga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Details" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Divulga" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                        <viewControllerLayoutGuide type="top" id="NeL-qP-1HM"/>
+                        <viewControllerLayoutGuide type="bottom" id="vtd-N5-JS8"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHJ-HX-fbm">
-                                <rect key="frame" x="168" y="101" width="412" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIh-y4-sAw">
-                                <rect key="frame" x="168" y="131" width="412" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joT-vE-VCm">
-                                <rect key="frame" x="168" y="72" width="412" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pBK-3i-gKg">
-                                <rect key="frame" x="20" y="72" width="140" height="140"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" id="lNB-c7-n1n">
+                        <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </stackView>
                     <navigationItem key="navigationItem" title="Events" id="KzZ-bY-PwJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="date2Label" destination="yHJ-HX-fbm" id="8zD-iK-EAl"/>
-                        <outlet property="image2View" destination="pBK-3i-gKg" id="WJw-Nw-Z2h"/>
-                        <outlet property="name2Label" destination="joT-vE-VCm" id="RxA-eX-SC1"/>
-                        <outlet property="org2Label" destination="sIh-y4-sAw" id="3wh-H2-16U"/>
                         <outlet property="searchDisplayController" destination="Svi-Mw-5nB" id="rP5-KJ-gj2"/>
                     </connections>
                 </viewController>
@@ -154,7 +126,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2439" y="-75"/>
+            <point key="canvasLocation" x="3054" y="-118.5"/>
         </scene>
         <!--Saved Events-->
         <scene sceneID="WIU-XU-RfD">
@@ -664,6 +636,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5a-fF-xtT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T9M-d4-8N5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SDa-6F-AUi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nga-A2-xMJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="Ftr-pn-Xko"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpR-Mh-Pmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2235" y="-118.5"/>
         </scene>
     </scenes>
     <resources>

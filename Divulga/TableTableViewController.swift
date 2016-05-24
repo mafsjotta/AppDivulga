@@ -21,10 +21,10 @@ class TableTableViewController: UITableViewController {
     
     func loadSampleEvents() {
         
-        let photo1 = UIImage(named: "event1")!
+        let photo1 = UIImage(named: "event2")!
         let event1 = Event(name: "NOAL", photo: photo1, date: "28-05-2016", details:"Este evento bla srea laopfh poaj ag limpus fasder ro latitif ya sim pois..", link:"www.tecnico.ulisboa.pt", org:"Instituto Superior Técnico")!
         
-        let photo2 = UIImage(named: "event2")!
+        let photo2 = UIImage(named: "event1")!
         let event2 = Event(name: "Doing Workshop", photo: photo2, date: "12-06-2016", details:"Este evento bla srea laopfh poaj ag limpus fasder ro latitif ya sim pois..", link:"www.tecnico.ulisboa.pt", org:"Instituto Superior Técnico")!
         
         events += [event1, event2]
@@ -138,12 +138,17 @@ class TableTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let event: Event
+
+        
+        
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
+*/
 }
+
 
 extension TableTableViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {

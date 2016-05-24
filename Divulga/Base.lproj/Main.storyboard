@@ -57,6 +57,7 @@
                                     <outlet property="nameLabel" destination="T2y-gj-jLk" id="4KJ-VR-LQG"/>
                                     <outlet property="orgLabel" destination="ooF-PL-Zlz" id="M1r-Ty-Vru"/>
                                     <outlet property="photoImageView" destination="bwV-0W-5FI" id="qGn-MB-4Cv"/>
+                                    <segue destination="SDa-6F-AUi" kind="showDetail" id="6qV-97-Lhd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -82,7 +83,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="P5L-Qq-bcc" id="bdJ-Ke-Vvg"/>
-                        <segue destination="SDa-6F-AUi" kind="showDetail" id="MSU-eg-qoT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqF-Gm-SPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -96,20 +96,12 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1407" y="-320"/>
+            <point key="canvasLocation" x="1473" y="-326.25"/>
         </scene>
         <!--Details-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController title="Details" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Divulga" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NeL-qP-1HM"/>
-                        <viewControllerLayoutGuide type="bottom" id="vtd-N5-JS8"/>
-                    </layoutGuides>
-                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" id="lNB-c7-n1n">
-                        <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </stackView>
                     <navigationItem key="navigationItem" title="Events" id="KzZ-bY-PwJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
@@ -126,7 +118,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3054" y="-118.5"/>
+            <point key="canvasLocation" x="3019.5" y="-118.5"/>
         </scene>
         <!--Saved Events-->
         <scene sceneID="WIU-XU-RfD">

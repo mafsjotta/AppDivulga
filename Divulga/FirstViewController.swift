@@ -12,7 +12,7 @@ import MapKit
 class FirstViewController: UIViewController {
     
     var events = [Event]()
-    var passedValue: String!
+
 
     @IBOutlet weak var imageView: UIImageView!
 
@@ -32,7 +32,6 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       name2Label.text = passedValue
             }
     
     override func didReceiveMemoryWarning() {

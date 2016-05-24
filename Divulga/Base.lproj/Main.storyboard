@@ -3,10 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-<<<<<<< Updated upstream
-=======
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
->>>>>>> Stashed changes
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -75,7 +73,7 @@
                     <navigationItem key="navigationItem" title="Events" id="tcX-F7-avX">
                         <barButtonItem key="rightBarButtonItem" image="Favorites" id="iVU-5h-qeI">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Far-pC-iyv">
-                                <rect key="frame" x="548" y="6" width="32" height="32"/>
+                                <rect key="frame" x="362" y="6" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Favorites"/>
                                 <connections>
@@ -106,15 +104,6 @@
         <!--Details-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="Svi-Mw-5nB">
-                    <connections>
-                        <outlet property="delegate" destination="9pv-A4-QxB" id="Bxs-t8-yXh"/>
-                        <outlet property="searchContentsController" destination="9pv-A4-QxB" id="3pV-IS-TRY"/>
-                        <outlet property="searchResultsDataSource" destination="9pv-A4-QxB" id="txo-C4-5z2"/>
-                        <outlet property="searchResultsDelegate" destination="9pv-A4-QxB" id="10o-da-bLn"/>
-                    </connections>
-                </searchDisplayController>
                 <viewController title="Details" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Divulga" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wrv-MI-dva"/>
@@ -126,6 +115,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="myj-pm-xhi">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="Uf4-9T-9ct"/>
                                 </constraints>
@@ -194,8 +186,10 @@
                                 <exclude reference="ces-lH-Cvt"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="DcI-Vw-ulb"/>
-                                <exclude reference="HTL-ab-lL8"/>
+                                <exclude reference="JaK-lm-n3X"/>
+                                <exclude reference="sAk-5g-jaR"/>
+                                <exclude reference="CTU-YW-IEN"/>
+                                <exclude reference="FS6-B8-TLF"/>
                                 <exclude reference="6PM-hZ-XEG"/>
                                 <exclude reference="AIa-9T-JN6"/>
                                 <exclude reference="4n7-0J-IgU"/>
@@ -206,10 +200,8 @@
                                 <exclude reference="Y2d-Tq-8Si"/>
                                 <exclude reference="cn9-Sm-Kp8"/>
                                 <exclude reference="ppG-K4-juY"/>
-                                <exclude reference="CTU-YW-IEN"/>
-                                <exclude reference="FS6-B8-TLF"/>
-                                <exclude reference="JaK-lm-n3X"/>
-                                <exclude reference="sAk-5g-jaR"/>
+                                <exclude reference="DcI-Vw-ulb"/>
+                                <exclude reference="HTL-ab-lL8"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -221,8 +213,10 @@
                                 <include reference="ces-lH-Cvt"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="DcI-Vw-ulb"/>
-                                <include reference="HTL-ab-lL8"/>
+                                <include reference="JaK-lm-n3X"/>
+                                <include reference="sAk-5g-jaR"/>
+                                <include reference="CTU-YW-IEN"/>
+                                <include reference="FS6-B8-TLF"/>
                                 <include reference="6PM-hZ-XEG"/>
                                 <include reference="AIa-9T-JN6"/>
                                 <include reference="4n7-0J-IgU"/>
@@ -233,10 +227,8 @@
                                 <include reference="Y2d-Tq-8Si"/>
                                 <include reference="cn9-Sm-Kp8"/>
                                 <include reference="ppG-K4-juY"/>
-                                <include reference="CTU-YW-IEN"/>
-                                <include reference="FS6-B8-TLF"/>
-                                <include reference="JaK-lm-n3X"/>
-                                <include reference="sAk-5g-jaR"/>
+                                <include reference="DcI-Vw-ulb"/>
+                                <include reference="HTL-ab-lL8"/>
                             </mask>
                         </variation>
                     </view>
@@ -251,6 +243,15 @@
                         <outlet property="searchDisplayController" destination="Svi-Mw-5nB" id="rP5-KJ-gj2"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Svi-Mw-5nB">
+                    <connections>
+                        <outlet property="delegate" destination="9pv-A4-QxB" id="Bxs-t8-yXh"/>
+                        <outlet property="searchContentsController" destination="9pv-A4-QxB" id="3pV-IS-TRY"/>
+                        <outlet property="searchResultsDataSource" destination="9pv-A4-QxB" id="txo-C4-5z2"/>
+                        <outlet property="searchResultsDelegate" destination="9pv-A4-QxB" id="10o-da-bLn"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="3060" y="-118.5"/>
         </scene>
@@ -355,7 +356,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEK-0Y-yfK">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEK-0Y-yfK">
                                 <rect key="frame" x="108" y="85" width="385" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -366,7 +367,7 @@
                                     <rect key="frame" x="20" y="87" width="360" height="30"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Db-px-4M5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Db-px-4M5">
                                 <rect key="frame" x="108" y="167" width="385" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
@@ -377,7 +378,7 @@
                                     <rect key="frame" x="20" y="154" width="360" height="30"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bmr-q5-rQP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bmr-q5-rQP">
                                 <rect key="frame" x="108" y="248" width="385" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
@@ -388,7 +389,7 @@
                                     <rect key="frame" x="20" y="221" width="360" height="30"/>
                                 </variation>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repeat Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuw-A0-UeO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuw-A0-UeO">
                                 <rect key="frame" x="234" y="214" width="132" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -400,7 +401,7 @@
                                     <rect key="frame" x="134" y="192" width="132" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KV2-HI-V6k">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KV2-HI-V6k">
                                 <rect key="frame" x="257" y="56" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -412,7 +413,7 @@
                                     <rect key="frame" x="157" y="58" width="86" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w71-O6-geT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w71-O6-geT">
                                 <rect key="frame" x="268" y="325" width="65" height="33"/>
                                 <color key="backgroundColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Register">
@@ -428,7 +429,7 @@
                                     <action selector="registerButtonTapped:" destination="5Iy-dx-3iW" eventType="touchUpInside" id="MHN-hh-eHJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G62-Rn-GsY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G62-Rn-GsY">
                                 <rect key="frame" x="168" y="413" width="265" height="30"/>
                                 <color key="tintColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Changed my mind. I have an account..."/>
@@ -596,7 +597,7 @@
                                     <rect key="frame" x="74" y="596" width="92" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpB-Oq-uBN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpB-Oq-uBN">
                                 <rect key="frame" x="263" y="138" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

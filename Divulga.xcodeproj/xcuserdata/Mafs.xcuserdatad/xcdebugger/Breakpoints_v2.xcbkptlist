@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Divulga/TableTableViewController.swift"
-            timestampString = "485796927.511886"
+            timestampString = "485814515.071048"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "TableTableViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Divulga/TableTableViewController.swift"
-            timestampString = "485797702.225627"
+            timestampString = "485814515.071048"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "TableTableViewController"
             landmarkType = "3">
          </BreakpointContent>

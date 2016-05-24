@@ -92,7 +92,6 @@ class TableTableViewController: UITableViewController {
         //performSegueWithIdentifier("DetailSegue", sender: self)
         //value1 = cell.nameLabel.text
     
-        
         return cell
     }
  
@@ -157,6 +156,7 @@ class TableTableViewController: UITableViewController {
         }
         
     }*/
+    
     
 
 }

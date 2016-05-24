@@ -14,7 +14,7 @@ class TableTableViewController: UITableViewController {
     
     var events = [Event]()
     var databasePath = NSString()
-    var value1: String!
+    //var value1: String!
    
     let searchController = UISearchController(searchResultsController: nil)
     var filteredEvents = [Event]()
@@ -89,8 +89,8 @@ class TableTableViewController: UITableViewController {
         cell.orgLabel.text = event.org
 
     
-        performSegueWithIdentifier("DetailSegue", sender: self)
-        value1 = cell.nameLabel.text
+        //performSegueWithIdentifier("DetailSegue", sender: self)
+        //value1 = cell.nameLabel.text
     
         
         return cell
@@ -144,7 +144,7 @@ class TableTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+   /* override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
         
         if (segue.identifier == "DetailSegue") {
             
@@ -156,7 +156,7 @@ class TableTableViewController: UITableViewController {
     
         }
         
-    }
+    }*/
     
 
 }

@@ -14,6 +14,7 @@ class TableTableViewController: UITableViewController {
     
     var events = [Event]()
     var databasePath = NSString()
+    var value1: String!
    
     let searchController = UISearchController(searchResultsController: nil)
     var filteredEvents = [Event]()
@@ -70,7 +71,7 @@ class TableTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "EventTableViewCell"
+    let cellIdentifier = "EventTableViewCell"
         
       let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
         
@@ -87,6 +88,11 @@ class TableTableViewController: UITableViewController {
         cell.dateLabel.text = event.date
         cell.orgLabel.text = event.org
 
+    
+        performSegueWithIdentifier("DetailSegue", sender: self)
+        value1 = cell.nameLabel.text
+    
+        
         return cell
     }
  
@@ -133,22 +139,27 @@ class TableTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let event: Event
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
         
+        if (segue.identifier == "DetailSegue") {
+            
+            
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destinationViewController as! FirstViewController
+            // your new view controller should have property that will store passed value
+            viewController.passedValue = value1
+    
+        }
         
-        
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-*/
-}
+    
 
+}
 
 extension TableTableViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {

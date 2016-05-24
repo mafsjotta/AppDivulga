@@ -71,59 +71,108 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Divulga/FirstViewController.swift"
-            timestampString = "485644874.845788"
+            filePath = "Divulga/TableTableViewController.swift"
+            timestampString = "485796927.511886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "FirstViewController"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "TableTableViewController"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Divulga/TableTableViewController.swift"
+            timestampString = "485795847.900533"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Divulga.FirstViewController.org2Label.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  symbolName = "Divulga.TableTableViewController.filterContentForSearchText (Swift.String, scope : Swift.String) -&gt; ()"
                   moduleName = "Divulga"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Mafs/Documents/Divulga/AppDivulga/Divulga/FirstViewController.swift"
-                  timestampString = "485640096.460721"
+                  urlString = "file:///Users/Mafs/Documents/Divulga/AppDivulga/Divulga/TableTableViewController.swift"
+                  timestampString = "485795847.989708"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "42">
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "58">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Divulga.FirstViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Divulga.FirstViewController"
+                  symbolName = "Divulga.TableTableViewController.(filterContentForSearchText (Swift.String, scope : Swift.String) -&gt; ()).(default argument 1)"
                   moduleName = "Divulga"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Mafs/Documents/Divulga/AppDivulga/Divulga/FirstViewController.swift"
-                  timestampString = "485640096.460993"
+                  urlString = "file:///Users/Mafs/Documents/Divulga/AppDivulga/Divulga/TableTableViewController.swift"
+                  timestampString = "485795847.990048"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "283">
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Divulga/TableTableViewController.swift"
+            timestampString = "485795861.368958"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Divulga.TableTableViewController.filterContentForSearchText (Swift.String, scope : Swift.String) -&gt; ()"
+                  moduleName = "Divulga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mafs/Documents/Divulga/AppDivulga/Divulga/TableTableViewController.swift"
+                  timestampString = "485795861.371087"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "58">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Divulga.FirstViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Divulga.FirstViewController&gt;"
+                  symbolName = "Divulga.TableTableViewController.(filterContentForSearchText (Swift.String, scope : Swift.String) -&gt; ()).(default argument 1)"
                   moduleName = "Divulga"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Mafs/Documents/Divulga/AppDivulga/Divulga/FirstViewController.swift"
-                  timestampString = "485640096.461296"
+                  urlString = "file:///Users/Mafs/Documents/Divulga/AppDivulga/Divulga/TableTableViewController.swift"
+                  timestampString = "485795861.371308"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "188">
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "4">
                </Location>
             </Locations>
          </BreakpointContent>

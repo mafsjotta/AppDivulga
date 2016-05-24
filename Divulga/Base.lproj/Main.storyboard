@@ -58,7 +58,7 @@
                                     <outlet property="nameLabel" destination="T2y-gj-jLk" id="4KJ-VR-LQG"/>
                                     <outlet property="orgLabel" destination="ooF-PL-Zlz" id="M1r-Ty-Vru"/>
                                     <outlet property="photoImageView" destination="bwV-0W-5FI" id="qGn-MB-4Cv"/>
-                                    <segue destination="SDa-6F-AUi" kind="show" action="showDetailViewController:sender:" id="6qV-97-Lhd"/>
+                                    <segue destination="SDa-6F-AUi" kind="show" identifier="DetailSegue" action="showDetailViewController:sender:" id="6qV-97-Lhd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -102,6 +102,15 @@
         <!--Details-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Svi-Mw-5nB">
+                    <connections>
+                        <outlet property="delegate" destination="9pv-A4-QxB" id="Bxs-t8-yXh"/>
+                        <outlet property="searchContentsController" destination="9pv-A4-QxB" id="3pV-IS-TRY"/>
+                        <outlet property="searchResultsDataSource" destination="9pv-A4-QxB" id="txo-C4-5z2"/>
+                        <outlet property="searchResultsDelegate" destination="9pv-A4-QxB" id="10o-da-bLn"/>
+                    </connections>
+                </searchDisplayController>
                 <viewController title="Details" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Divulga" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wrv-MI-dva"/>
@@ -230,18 +239,14 @@
                     <navigationItem key="navigationItem" title="Event" id="KzZ-bY-PwJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="date2Label" destination="8dc-PT-jbE" id="2wU-oZ-TfA"/>
+                        <outlet property="detailsText" destination="ces-lH-Cvt" id="kK7-ar-SKZ"/>
+                        <outlet property="imageView" destination="myj-pm-xhi" id="7ZB-0a-hhy"/>
+                        <outlet property="name2Label" destination="NDu-za-PhM" id="7Nh-2X-mcG"/>
+                        <outlet property="org2Label" destination="dML-Lm-omL" id="Ic2-5q-ey3"/>
                         <outlet property="searchDisplayController" destination="Svi-Mw-5nB" id="rP5-KJ-gj2"/>
                     </connections>
                 </viewController>
-                <searchDisplayController id="Svi-Mw-5nB">
-                    <connections>
-                        <outlet property="delegate" destination="9pv-A4-QxB" id="Bxs-t8-yXh"/>
-                        <outlet property="searchContentsController" destination="9pv-A4-QxB" id="3pV-IS-TRY"/>
-                        <outlet property="searchResultsDataSource" destination="9pv-A4-QxB" id="txo-C4-5z2"/>
-                        <outlet property="searchResultsDelegate" destination="9pv-A4-QxB" id="10o-da-bLn"/>
-                    </connections>
-                </searchDisplayController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3060" y="-118.5"/>
         </scene>

@@ -15,7 +15,8 @@ class TableTableViewController: UITableViewController {
     var events = [Event]()
     var databasePath = NSString()
    
-    
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredEvents = [Event]()
 
     
     func loadSampleEvents() {
@@ -32,10 +33,14 @@ class TableTableViewController: UITableViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-  
     
         // Load the sample data.
         loadSampleEvents()
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
     }
 
   
@@ -52,10 +57,15 @@ class TableTableViewController: UITableViewController {
         return 1
     }
 
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return filteredEvents.count
+        }
         return events.count
     }
 
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -64,8 +74,13 @@ class TableTableViewController: UITableViewController {
         
       let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
         
-        // Fetches the appropriate event for the data source layout.
-        let event = events[indexPath.row]
+        let event: Event
+        if searchController.active && searchController.searchBar.text != "" {
+            event = filteredEvents[indexPath.row]
+        } else {
+            event = events[indexPath.row]
+        }
+
         
         cell.nameLabel.text = event.name
         cell.photoImageView.image = event.photo
@@ -75,6 +90,13 @@ class TableTableViewController: UITableViewController {
         return cell
     }
  
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredEvents = events.filter { events in
+            return events.name.lowercaseString.containsString(searchText.lowercaseString)
+        }
+        
+        tableView.reloadData()
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -122,3 +144,10 @@ class TableTableViewController: UITableViewController {
     */
 
 }
+
+extension TableTableViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+}
+

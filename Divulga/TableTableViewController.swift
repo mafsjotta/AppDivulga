@@ -180,10 +180,10 @@ class TableTableViewController: UITableViewController {
                             event = events[indexPath.row]
                                 }
                 
-                            controller.detailEvent = event
+                    controller.detailEvent = event
                 
                 //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
-               // controller.navigationItem.leftItemsSupplementBackButton = true
+               controller.navigationItem.leftItemsSupplementBackButton = true
                 
             }
         }

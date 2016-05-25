@@ -30,7 +30,8 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var date2Label: UILabel!
     
-    @IBOutlet weak var detailsText: UITextView!
+    @IBOutlet weak var detailsText: UILabel!
+    
     
     func configureView() {
         if let detailEvent = detailEvent {

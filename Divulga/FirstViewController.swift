@@ -19,8 +19,6 @@ class FirstViewController: UIViewController {
             configureView()
         }
     }
-    @IBAction func SaveButton(sender: UIBarButtonItem) {
-    }
 
     @IBOutlet weak var imageView: UIImageView!
 
@@ -30,18 +28,15 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var date2Label: UILabel!
     
-    @IBOutlet weak var detailsText: UILabel!
-    
+    @IBOutlet weak var detailsText: UITextView!
     
     func configureView() {
         if let detailEvent = detailEvent {
-            if let name2Label = name2Label, imageView = imageView, org2Label = org2Label, detailsText=detailsText, date2Label=date2Label {
+            if let name2Label = name2Label, imageView = imageView, org2Label = org2Label {
                 
                 org2Label.text = detailEvent.org
                 name2Label.text = detailEvent.name
                 imageView.image = UIImage(named: detailEvent.name)
-                detailsText.text = detailEvent.details
-                date2Label.text = detailEvent.date
                 
 
             }

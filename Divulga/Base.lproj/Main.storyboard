@@ -186,6 +186,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="date2Label" destination="8dc-PT-jbE" id="2wU-oZ-TfA"/>
                         <outlet property="detailsText" destination="ces-lH-Cvt" id="kK7-ar-SKZ"/>

@@ -10,9 +10,11 @@ import UIKit
 
 class RegisterPageViewController: UIViewController {
 
+    
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var userPassTextField: UITextField!
     @IBOutlet weak var repeatPassTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

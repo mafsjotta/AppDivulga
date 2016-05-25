@@ -14,18 +14,19 @@ class TableTableViewController: UITableViewController {
     
     var events = [Event]()
     var databasePath = NSString()
-    //var value1: String!
+
    
     let searchController = UISearchController(searchResultsController: nil)
+    var detailViewController: FirstViewController? = nil
     var filteredEvents = [Event]()
 
     
     func loadSampleEvents() {
         
-        let photo1 = UIImage(named: "event2")!
+        let photo1 = UIImage(named: "NOAL")!
         let event1 = Event(name: "NOAL", photo: photo1, date: "28-05-2016", details:"Este evento bla srea laopfh poaj ag limpus fasder ro latitif ya sim pois..", link:"www.tecnico.ulisboa.pt", org:"Instituto Superior Técnico")!
         
-        let photo2 = UIImage(named: "event1")!
+        let photo2 = UIImage(named: "Doing Workshop")!
         let event2 = Event(name: "Doing Workshop", photo: photo2, date: "12-06-2016", details:"Este evento bla srea laopfh poaj ag limpus fasder ro latitif ya sim pois..", link:"www.tecnico.ulisboa.pt", org:"Instituto Superior Técnico")!
         
         events += [event1, event2]
@@ -89,11 +90,9 @@ class TableTableViewController: UITableViewController {
         cell.orgLabel.text = event.org
 
     
-        //performSegueWithIdentifier("DetailSegue", sender: self)
-        //value1 = cell.nameLabel.text
-    
-        
+        performSegueWithIdentifier("Detail", sender: self)
         return cell
+        
     }
  
     func filterContentForSearchText(searchText: String, scope: String = "All") {
@@ -143,11 +142,18 @@ class TableTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+/*
+   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+    
 
-   /* override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
-        
-        if (segue.identifier == "DetailSegue") {
+        if (segue.identifier == "Detail") {
             
+            let event: Event
+            if searchController.active && searchController.searchBar.text != "" {
+                event = filteredEvents[indexPath.row]
+            } else {
+                event = events[indexPath.row]
+            }
             
             // initialize new view controller and cast it as your view controller
             let viewController = segue.destinationViewController as! FirstViewController
@@ -156,9 +162,37 @@ class TableTableViewController: UITableViewController {
     
         }
         
-    }*/
+    }
+     */
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Detail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let event: Event
+                if searchController.active && searchController.searchBar.text != "" {
+                    event = filteredEvents[indexPath.row]
+                } else {
+                    event = events[indexPath.row]
+                }
 
+            
+                let controller = segue.destinationViewController as! FirstViewController
+                controller.detailEvent = event
+                
+                //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+               // controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
+     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 extension TableTableViewController: UISearchResultsUpdating {

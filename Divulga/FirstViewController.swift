@@ -12,7 +12,13 @@ import MapKit
 class FirstViewController: UIViewController {
     
     var events = [Event]()
-
+    
+    
+    var detailEvent: Event? {
+        didSet {
+            configureView()
+        }
+    }
 
     @IBOutlet weak var imageView: UIImageView!
 
@@ -24,14 +30,23 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var detailsText: UITextView!
     
-    
-    
-  func configureView() {
+    func configureView() {
+        if let detailEvent = detailEvent {
+            if let name2Label = name2Label, imageView = imageView, org2Label = org2Label {
+                
+                org2Label.text = detailEvent.org
+                name2Label.text = detailEvent.name
+                imageView.image = UIImage(named: detailEvent.name)
+                
+
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
             }
     
     override func didReceiveMemoryWarning() {

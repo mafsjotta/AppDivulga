@@ -62,7 +62,7 @@
                                     <outlet property="nameLabel" destination="T2y-gj-jLk" id="4KJ-VR-LQG"/>
                                     <outlet property="orgLabel" destination="ooF-PL-Zlz" id="M1r-Ty-Vru"/>
                                     <outlet property="photoImageView" destination="bwV-0W-5FI" id="qGn-MB-4Cv"/>
-                                    <segue destination="SDa-6F-AUi" kind="show" identifier="DetailSegue" action="showDetailViewController:sender:" id="6qV-97-Lhd"/>
+                                    <segue destination="9pv-A4-QxB" kind="show" identifier="Detail" animates="NO" id="H4G-u4-m8S"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -234,8 +234,15 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Event" id="KzZ-bY-PwJ"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <navigationItem key="navigationItem" title="Events" id="tmE-Z4-1uR">
+                        <barButtonItem key="backBarButtonItem" title="Back" width="50" id="yny-va-91i">
+                            <color key="tintColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xVN-XA-0oq">
+                            <color key="tintColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="date2Label" destination="8dc-PT-jbE" id="2wU-oZ-TfA"/>
                         <outlet property="detailsText" destination="ces-lH-Cvt" id="kK7-ar-SKZ"/>
@@ -255,7 +262,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3060" y="-118.5"/>
+            <point key="canvasLocation" x="2235" y="-15"/>
         </scene>
         <!--Saved Events-->
         <scene sceneID="WIU-XU-RfD">
@@ -1146,24 +1153,6 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="T9M-d4-8N5">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SDa-6F-AUi" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nga-A2-xMJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="Ftr-pn-Xko"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cpR-Mh-Pmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2235" y="-118.5"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Events" width="32" height="32"/>
@@ -1172,5 +1161,5 @@
         <image name="Profile" width="32" height="32"/>
         <image name="Simbolo" width="341" height="341"/>
     </resources>
-    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+    <color key="tintColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

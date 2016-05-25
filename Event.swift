@@ -20,6 +20,7 @@ class Event {
     var details: String
     var link: String
     var org: String
+
     
     // MARK: Initialization
     
@@ -32,6 +33,7 @@ class Event {
         self.details = details
         self.link = link
         self.org = org
+
         
         
         // Initialization should fail if there is no name

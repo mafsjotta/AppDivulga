@@ -54,20 +54,11 @@ class RegisterPageViewController: UIViewController {
         self.presentViewController(myAlert, animated: true, completion: nil);
     }
     
-    
     @IBAction func mindChangedButtonTapped(sender: AnyObject) {
-        
-        var myAlert = UIAlertController(title:"Ok Mofo!!!", message: "Suit yourself!",preferredStyle: UIAlertControllerStyle.Alert);
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){action in
-            self.dismissViewControllerAnimated(true, completion: nil);
-        }
-        
-        myAlert.addAction(okAction);
-        self.presentViewController(myAlert, animated: true, completion: nil);
-
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
-    
+
+
 
     func displayMyAlertMessage(userMessage:String){
         var myAlert = UIAlertController(title:"Alert", message: userMessage,preferredStyle: UIAlertControllerStyle.Alert)

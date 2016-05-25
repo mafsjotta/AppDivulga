@@ -23,7 +23,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventTableViewCell" rowHeight="100" id="3On-fZ-UXg" customClass="EventTableViewCell" customModule="Divulga" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="136" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="3On-fZ-UXg" id="jJ7-cB-bNa">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="99.5"/>
@@ -233,12 +233,25 @@
                                     <action selector="logOuButtonTapped:" destination="hBK-mI-1pp" eventType="touchUpInside" id="0A0-lR-S38"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="wSV-80-bBd">
+                                <rect key="frame" x="88" y="68" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X08-Jk-mPs">
+                                <rect key="frame" x="139" y="39" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="zwX-8I-H2g"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="profileName" destination="X08-Jk-mPs" id="GCo-MW-dY6"/>
+                        <outlet property="profilePicture" destination="wSV-80-bBd" id="OsA-pw-bLn"/>
                         <segue destination="49e-Tb-3d3" kind="modal" identifier="logOutView" id="VsH-ZG-pbo"/>
                     </connections>
                 </viewController>

@@ -10,6 +10,10 @@ import UIKit
 
 class ThirdViewController: UIViewController {
 
+    
+    @IBOutlet weak var profileName: UILabel!
+    @IBOutlet weak var profilePicture: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

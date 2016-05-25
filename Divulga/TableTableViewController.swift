@@ -180,10 +180,14 @@ class TableTableViewController: UITableViewController {
                             //event = events[indexPath.row]
                              //   }
                 
+<<<<<<< HEAD
                             //controller.detailEvent = event
+=======
+                    controller.detailEvent = event
+>>>>>>> origin/master
                 
                 //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
-               // controller.navigationItem.leftItemsSupplementBackButton = true
+               controller.navigationItem.leftItemsSupplementBackButton = true
                 
             }
         }

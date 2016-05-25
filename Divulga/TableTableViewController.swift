@@ -167,20 +167,24 @@ class TableTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Detail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let event: Event
-                if searchController.active && searchController.searchBar.text != "" {
-                    event = filteredEvents[indexPath.row]
-                } else {
-                    event = events[indexPath.row]
-                }
-
             
-                let controller = segue.destinationViewController as! FirstViewController
-                controller.detailEvent = event
+                    let controller = segue.destinationViewController as! FirstViewController
+                
+                    if let selectedCell = sender as? EventTableViewCell {
+                
+                    let indexPath = tableView.indexPathForCell(selectedCell)!
+                    let event: Event
+                    if searchController.active && searchController.searchBar.text != "" {
+                            event = filteredEvents[indexPath.row]
+                                } else {
+                            event = events[indexPath.row]
+                                }
+                
+                            controller.detailEvent = event
                 
                 //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
                // controller.navigationItem.leftItemsSupplementBackButton = true
+                
             }
         }
      }

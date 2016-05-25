@@ -28,15 +28,18 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var date2Label: UILabel!
     
-    @IBOutlet weak var detailsText: UITextView!
+    @IBOutlet weak var detailsText: UILabel!
+ 
     
     func configureView() {
         if let detailEvent = detailEvent {
-            if let name2Label = name2Label, imageView = imageView, org2Label = org2Label {
+            if let name2Label = name2Label, imageView = imageView, org2Label = org2Label, date2Label = date2Label, detailsText = detailsText {
                 
                 org2Label.text = detailEvent.org
                 name2Label.text = detailEvent.name
                 imageView.image = UIImage(named: detailEvent.name)
+                date2Label.text = detailEvent.date
+                detailsText.text = detailEvent.details
                 
 
             }

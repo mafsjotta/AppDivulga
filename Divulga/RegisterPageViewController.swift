@@ -16,6 +16,17 @@ class RegisterPageViewController: UIViewController {
     @IBOutlet weak var repeatPassTextField: UITextField!
 
     
+    //Interests
+    @IBOutlet weak var physicsInterest: CheckBox!
+    @IBOutlet weak var mathInterest: CheckBox!
+    @IBOutlet weak var bioInterest: CheckBox!
+    @IBOutlet weak var geoInterest: CheckBox!
+    @IBOutlet weak var medicineInterest: CheckBox!
+    @IBOutlet weak var astroInterest: CheckBox!
+    @IBOutlet weak var progInterest: CheckBox!
+    @IBOutlet weak var electroInterest: CheckBox!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +51,10 @@ class RegisterPageViewController: UIViewController {
         if userPass != rePass {
             displayMyAlertMessage("Passwords do not match");
             
+        }
+        
+        if physicsInterest.isChecked{
+            displayMyAlertMessage("Wow, you like Physics!!!");
         }
         NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
         NSUserDefaults.standardUserDefaults().setObject(userPass, forKey: "userPass")

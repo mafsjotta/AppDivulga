@@ -47,5 +47,4 @@ class CheckBox: UIButton {
             isChecked = !isChecked
         }
     }
-    
 }

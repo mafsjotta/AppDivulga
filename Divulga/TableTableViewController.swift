@@ -16,7 +16,7 @@ class TableTableViewController: UITableViewController {
     var databasePath = NSString()
 
    
-    let searchController = UISearchController(searchResultsController: nil)
+    //let searchController = UISearchController(searchResultsController: nil)
     var detailViewController: FirstViewController? = nil
     var filteredEvents = [Event]()
 
@@ -39,10 +39,10 @@ class TableTableViewController: UITableViewController {
         // Load the sample data.
         loadSampleEvents()
         
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
+        //searchController.searchResultsUpdater = self
+        //searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
+        //tableView.tableHeaderView = searchController.searchBar
     }
 
   
@@ -61,9 +61,9 @@ class TableTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.active && searchController.searchBar.text != "" {
-            return filteredEvents.count
-        }
+       // if searchController.active && searchController.searchBar.text != "" {
+         //   return filteredEvents.count
+        //}
         return events.count
     }
 
@@ -77,11 +77,11 @@ class TableTableViewController: UITableViewController {
       let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
         
         let event: Event
-        if searchController.active && searchController.searchBar.text != "" {
-            event = filteredEvents[indexPath.row]
-        } else {
+       // if searchController.active && searchController.searchBar.text != "" {
+         //   event = filteredEvents[indexPath.row]
+        //} else {
             event = events[indexPath.row]
-        }
+        //}
 
         
         cell.nameLabel.text = event.name
@@ -174,13 +174,13 @@ class TableTableViewController: UITableViewController {
                 
                     let indexPath = tableView.indexPathForCell(selectedCell)!
                     let event: Event
-                    if searchController.active && searchController.searchBar.text != "" {
-                            event = filteredEvents[indexPath.row]
-                                } else {
-                            event = events[indexPath.row]
-                                }
+                    //if searchController.active && searchController.searchBar.text != "" {
+                            //event = filteredEvents[indexPath.row]
+                           //     } else {
+                            //event = events[indexPath.row]
+                             //   }
                 
-                            controller.detailEvent = event
+                            //controller.detailEvent = event
                 
                 //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
                // controller.navigationItem.leftItemsSupplementBackButton = true

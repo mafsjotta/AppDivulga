@@ -19,5 +19,146 @@
             landmarkType = "2">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Divulga/RegisterPageViewController.swift"
+            timestampString = "485957451.641278"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "RegisterPageViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Divulga.RegisterPageViewController.physicsInterest.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;Divulga.CheckBox&gt;"
+                  moduleName = "Divulga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JoseSenart/Desktop/Te%CC%81cnico/2%C2%BASem/LID/AppDivulga/Divulga/RegisterPageViewController.swift"
+                  timestampString = "485957451.944387"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Divulga.RegisterPageViewController.physicsInterest.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;Divulga.CheckBox&gt;"
+                  moduleName = "Divulga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JoseSenart/Desktop/Te%CC%81cnico/2%C2%BASem/LID/AppDivulga/Divulga/RegisterPageViewController.swift"
+                  timestampString = "485957451.944966"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "47">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Divulga.RegisterPageViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Divulga.RegisterPageViewController"
+                  moduleName = "Divulga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JoseSenart/Desktop/Te%CC%81cnico/2%C2%BASem/LID/AppDivulga/Divulga/RegisterPageViewController.swift"
+                  timestampString = "485957451.945106"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "317">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Divulga.RegisterPageViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Divulga.RegisterPageViewController&gt;"
+                  moduleName = "Divulga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JoseSenart/Desktop/Te%CC%81cnico/2%C2%BASem/LID/AppDivulga/Divulga/RegisterPageViewController.swift"
+                  timestampString = "485957451.945326"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "207">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Divulga/RegisterPageViewController.swift"
+            timestampString = "485957468.992636"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "RegisterPageViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Divulga.RegisterPageViewController.progInterest.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;Divulga.CheckBox&gt;"
+                  moduleName = "Divulga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JoseSenart/Desktop/Te%CC%81cnico/2%C2%BASem/LID/AppDivulga/Divulga/RegisterPageViewController.swift"
+                  timestampString = "485964601.937177"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Divulga.RegisterPageViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Divulga.RegisterPageViewController"
+                  moduleName = "Divulga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JoseSenart/Desktop/Te%CC%81cnico/2%C2%BASem/LID/AppDivulga/Divulga/RegisterPageViewController.swift"
+                  timestampString = "485964601.937629"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "689">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Divulga.RegisterPageViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Divulga.RegisterPageViewController&gt;"
+                  moduleName = "Divulga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JoseSenart/Desktop/Te%CC%81cnico/2%C2%BASem/LID/AppDivulga/Divulga/RegisterPageViewController.swift"
+                  timestampString = "485964601.9378"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "543">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

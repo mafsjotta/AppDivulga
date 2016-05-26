@@ -40,7 +40,7 @@ class FirstViewController: UIViewController {
                 imageView.image = UIImage(named: detailEvent.name)
                 date2Label.text = detailEvent.date
                 detailsText.text = detailEvent.details
-                
+                detailsText.sizeToFit()
 
             }
         }

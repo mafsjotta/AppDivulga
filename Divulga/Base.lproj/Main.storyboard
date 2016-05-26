@@ -114,28 +114,48 @@
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qeg-Xv-wbk">
                                 <rect key="frame" x="0.0" y="63" width="320" height="687"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organização" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dML-Lm-omL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dML-Lm-omL">
                                         <rect key="frame" x="20" y="179" width="280" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Organização">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDu-za-PhM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDu-za-PhM">
                                         <rect key="frame" x="20" y="158" width="280" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="ait-Bd-SEy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Name">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dc-PT-jbE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dc-PT-jbE">
                                         <rect key="frame" x="20" y="199" width="280" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="hks-58-YA0"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Date">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="myj-pm-xhi">
@@ -147,17 +167,17 @@
                                             <constraint firstAttribute="height" constant="150" id="Fji-7k-ofz"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOt-wU-9Rq">
-                                        <rect key="frame" x="20" y="228" width="280" height="339"/>
+                                    <label opaque="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOt-wU-9Rq">
+                                        <rect key="frame" x="20" y="228" width="280" height="330"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="339" id="bfi-Vh-E9p"/>
+                                            <constraint firstAttribute="height" constant="330" id="Cmh-Ra-CXe"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Details">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="truncatingTail" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" paragraphSpacing="1" paragraphSpacingBefore="1" firstLineHeadIndent="1" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -165,6 +185,7 @@
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="BOt-wU-9Rq" firstAttribute="trailing" secondItem="8dc-PT-jbE" secondAttribute="trailing" id="ALK-RL-Hlh"/>
                                     <constraint firstItem="dML-Lm-omL" firstAttribute="top" secondItem="NDu-za-PhM" secondAttribute="bottom" id="AY9-lU-Y0r"/>
                                     <constraint firstItem="dML-Lm-omL" firstAttribute="trailing" secondItem="8dc-PT-jbE" secondAttribute="trailing" id="Bcn-U2-pka"/>
                                     <constraint firstItem="myj-pm-xhi" firstAttribute="top" secondItem="Qeg-Xv-wbk" secondAttribute="top" id="FQf-Id-K5Y"/>
@@ -172,16 +193,15 @@
                                     <constraint firstItem="dML-Lm-omL" firstAttribute="leading" secondItem="8dc-PT-jbE" secondAttribute="leading" id="K3N-rR-OyS"/>
                                     <constraint firstItem="NDu-za-PhM" firstAttribute="leading" secondItem="dML-Lm-omL" secondAttribute="leading" id="KXy-bh-RsC"/>
                                     <constraint firstItem="myj-pm-xhi" firstAttribute="centerX" secondItem="Qeg-Xv-wbk" secondAttribute="centerX" id="LgE-PW-fWA"/>
-                                    <constraint firstItem="8dc-PT-jbE" firstAttribute="trailing" secondItem="BOt-wU-9Rq" secondAttribute="trailing" id="OBd-0G-2GP"/>
                                     <constraint firstItem="myj-pm-xhi" firstAttribute="leading" secondItem="Qeg-Xv-wbk" secondAttribute="leading" id="PUw-6c-11X"/>
-                                    <constraint firstAttribute="bottom" secondItem="BOt-wU-9Rq" secondAttribute="bottom" constant="120" id="UYv-5a-Twz"/>
                                     <constraint firstItem="8dc-PT-jbE" firstAttribute="top" secondItem="dML-Lm-omL" secondAttribute="bottom" constant="3" id="VM6-0y-NA4"/>
                                     <constraint firstAttribute="trailing" secondItem="myj-pm-xhi" secondAttribute="trailing" id="Z8t-du-DJX"/>
                                     <constraint firstItem="NDu-za-PhM" firstAttribute="top" secondItem="myj-pm-xhi" secondAttribute="bottom" constant="8" symbolic="YES" id="bZQ-Qd-cef"/>
+                                    <constraint firstItem="BOt-wU-9Rq" firstAttribute="top" secondItem="8dc-PT-jbE" secondAttribute="bottom" constant="8" symbolic="YES" id="o6P-0m-vig"/>
+                                    <constraint firstAttribute="bottom" secondItem="BOt-wU-9Rq" secondAttribute="bottom" constant="129" id="rKR-hM-9ve"/>
                                     <constraint firstItem="NDu-za-PhM" firstAttribute="trailing" secondItem="dML-Lm-omL" secondAttribute="trailing" id="t1U-c7-w53"/>
-                                    <constraint firstItem="BOt-wU-9Rq" firstAttribute="top" secondItem="8dc-PT-jbE" secondAttribute="bottom" constant="8" symbolic="YES" id="xQN-fm-SjU"/>
+                                    <constraint firstItem="BOt-wU-9Rq" firstAttribute="leading" secondItem="8dc-PT-jbE" secondAttribute="leading" id="vnd-Ax-qc4"/>
                                     <constraint firstItem="myj-pm-xhi" firstAttribute="centerX" secondItem="NDu-za-PhM" secondAttribute="centerX" id="xj2-O0-rzW"/>
-                                    <constraint firstItem="8dc-PT-jbE" firstAttribute="leading" secondItem="BOt-wU-9Rq" secondAttribute="leading" id="ygK-eG-uQ4"/>
                                 </constraints>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="30" maxX="10" maxY="0.0"/>
                             </scrollView>

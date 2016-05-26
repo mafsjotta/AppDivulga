@@ -27,9 +27,12 @@ class TableTableViewController: UITableViewController {
         let event1 = Event(name:"NOAL", photo: photo1, date: "28-05-2016", details:"ATENÇÂO: Confirmar presença no facebook não conta como inscrição. Para se inscrever, dirija-se ao link no final do texto.\n A atividade mensal das NOAL será realizada no sábado 28–maio–2016 no Planetário Calouste Gulbenkian. A sessão deste mês terá início com a palestra às 21:30. Após a palestra haverá um pequeno espetáculo de música e efeitos na cúpula do Planetário. As observações astronómicas decorrerão em contínuo ao longo da noite, até às 24:00. \n A palestra é subordinada ao tema O Lado Escuro da Força, por Tiago Barreiro, do Instituto de Astrofísica e Ciências do Espaço.", link:"www.oal.ul.pt/inscricoes/", org:"IACE")!
         
         let photo2 = UIImage(named: "Doing Workshop")!
-        let event2 = Event(name: "Doing Workshop", photo: photo2, date: "12-06-2016", details:"Este evento bla srea laopfh poaj ag limpus fasder ro latitif ya sim pois..", link:"www.tecnico.ulisboa.pt", org:"Instituto Superior Técnico")!
+        let event2 = Event(name: "Doing Workshop", photo: photo2, date: "04-06-2016", details: "Meet the Maker \n No penúltimo sábado de cada mês, a Dòing recebe um Maker convidado. Entusiastas de tecnologia, artesãos, mecânicos ou cientistas, que vêm partilhar os seus próprios projectos esperando inspirar os seus. Estes workshops destinam-se a jovens e adultos curiosos, amantes do  DIY (do inglês Do-it-Yourself), habilidosos ou profissionais, com interesse em aprender ou desenvolver competências técnicas. \n Das 15.30 às 18.30 | M/14 | 10€ (inclui certificado de participação) | Inscrição on-line", link:"http://www.pavconhecimento.pt/visite-nos/actividades/detalhe.asp?id_obj=2798", org:"Pavilhão do Conhecimento")!
         
-        events += [event1, event2]
+        let photo3 = UIImage(named: "Web Summit")!
+        let event3 = Event(name: "Web Summit", photo: photo3, date: "07-11-2016 a 10-11-2016", details:"The most important startup gathering on the planet. Join us to help write our next chapter in Lisbon on November 8-10: https://websummit.net/ . \n \"An extraordinary gathering of talent & energy with one goal: to help entrepreneurs network\" - Wired\n  \"It was a conference that lived up to, and even exceeded, the hype\" - The Wall Street Journal", link:"https://websummit.net", org:" ")!
+        
+        events += [event1, event2, event3]
         
     }
    

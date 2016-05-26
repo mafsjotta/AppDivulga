@@ -14,11 +14,15 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     
-
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
+        let username  = defaults.objectForKey("userName") as? String ?? String()
+        //let password  = defaults.objectForKey("userPass")
+        
+        profileName.text = username
         // Do any additional setup after loading the view.
     }
 

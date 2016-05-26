@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterPageViewController: UIViewController {
+class RegisterPageViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var userNameTextField: UITextField!
@@ -28,6 +28,7 @@ class RegisterPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -35,6 +36,11 @@ class RegisterPageViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
     }
     
     @IBAction func registerButtonTapped(sender: AnyObject) {
@@ -57,7 +63,7 @@ class RegisterPageViewController: UIViewController {
         }
         
         if userPass?.characters.count<6{
-            displayMyAlertMessage("Passwords must hav at least 6 characters");
+            displayMyAlertMessage("Passwords must have at least 6 characters");
         }
         if userPass != rePass {
             displayMyAlertMessage("Passwords do not match");

@@ -26,8 +26,6 @@ class RegisterPageViewController: UIViewController {
     @IBOutlet weak var progInterest: CheckBox!
     @IBOutlet weak var electroInterest: CheckBox!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,18 +42,28 @@ class RegisterPageViewController: UIViewController {
         let userPass = userPassTextField.text;
         let rePass   = repeatPassTextField.text;
         
+        var userInterests: [String: Bool]=["Phy": physicsInterest.isChecked,
+                                           "Mat": mathInterest.isChecked,
+                                           "Bio": bioInterest.isChecked,
+                                           "Geo": geoInterest.isChecked,
+                                           "Med": medicineInterest.isChecked,
+                                           "Ast": astroInterest.isChecked,
+                                           "Pro": progInterest.isChecked,
+                                           "Ele": electroInterest.isChecked]
+
+        
         if (userName!.isEmpty || userPass!.isEmpty || rePass!.isEmpty) {
             displayMyAlertMessage("All fields are required");
         }
         
+        if userPass?.characters.count<6{
+            displayMyAlertMessage("Passwords must hav at least 6 characters");
+        }
         if userPass != rePass {
             displayMyAlertMessage("Passwords do not match");
-            
         }
         
-        if physicsInterest.isChecked{
-            displayMyAlertMessage("Wow, you like Physics!!!");
-        }
+        NSUserDefaults.standardUserDefaults().setObject(userInterests, forKey: "userInterests")
         NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
         NSUserDefaults.standardUserDefaults().setObject(userPass, forKey: "userPass")
         NSUserDefaults.standardUserDefaults().synchronize();

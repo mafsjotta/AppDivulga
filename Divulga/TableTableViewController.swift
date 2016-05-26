@@ -90,7 +90,7 @@ class TableTableViewController: UITableViewController {
         cell.orgLabel.text = event.org
 
     
-        //performSegueWithIdentifier("Detail", sender: self)
+        //performSegueWithIdentifier("Detail", sender: self)  <<<<<<<<<< A MERDA!!!!!!!!!111
         return cell
         
     }

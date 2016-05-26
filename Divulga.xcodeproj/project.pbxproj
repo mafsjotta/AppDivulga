@@ -15,7 +15,7 @@
 		1102FAC81CEE013600BC186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1102FAC61CEE013600BC186F /* LaunchScreen.storyboard */; };
 		1102FAD31CEE013600BC186F /* DivulgaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1102FAD21CEE013600BC186F /* DivulgaTests.swift */; };
 		1102FADE1CEE013600BC186F /* DivulgaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1102FADD1CEE013600BC186F /* DivulgaUITests.swift */; };
-		1102FAEC1CEE0C8400BC186F /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1102FAEB1CEE0C8400BC186F /* ThirdViewController.swift */; };
+		1102FAEC1CEE0C8400BC186F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1102FAEB1CEE0C8400BC186F /* ProfileViewController.swift */; };
 		111355321CF202C00013C129 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111355311CF202C00013C129 /* MainTabController.swift */; };
 		111355341CF2054B0013C129 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111355331CF2054B0013C129 /* LoginPageViewController.swift */; };
 		111355361CF2058E0013C129 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111355351CF2058E0013C129 /* RegisterPageViewController.swift */; };
@@ -66,7 +66,7 @@
 		1102FAD91CEE013600BC186F /* DivulgaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DivulgaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1102FADD1CEE013600BC186F /* DivulgaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivulgaUITests.swift; sourceTree = "<group>"; };
 		1102FADF1CEE013600BC186F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1102FAEB1CEE0C8400BC186F /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		1102FAEB1CEE0C8400BC186F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		111355311CF202C00013C129 /* MainTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		111355331CF2054B0013C129 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		111355351CF2058E0013C129 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 				1102FABB1CEE013600BC186F /* AppDelegate.swift */,
 				1102FABD1CEE013600BC186F /* FirstViewController.swift */,
 				1102FABF1CEE013600BC186F /* SecondViewController.swift */,
-				1102FAEB1CEE0C8400BC186F /* ThirdViewController.swift */,
+				1102FAEB1CEE0C8400BC186F /* ProfileViewController.swift */,
 				114634521CF09AD200FED52D /* EventTableViewCell.swift */,
 				1150ADBC1CEF6A2100E53944 /* TableTableViewController.swift */,
 				114634561CF0A69A00FED52D /* Event.swift */,
@@ -334,7 +334,7 @@
 				1102FAC01CEE013600BC186F /* SecondViewController.swift in Sources */,
 				1102FABC1CEE013600BC186F /* AppDelegate.swift in Sources */,
 				111355341CF2054B0013C129 /* LoginPageViewController.swift in Sources */,
-				1102FAEC1CEE0C8400BC186F /* ThirdViewController.swift in Sources */,
+				1102FAEC1CEE0C8400BC186F /* ProfileViewController.swift in Sources */,
 				111355321CF202C00013C129 /* MainTabController.swift in Sources */,
 				114634571CF0A69A00FED52D /* Event.swift in Sources */,
 				1102FABE1CEE013600BC186F /* FirstViewController.swift in Sources */,

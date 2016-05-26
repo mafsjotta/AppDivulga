@@ -14,6 +14,8 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +27,14 @@ class ThirdViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
 
+    @IBAction func editButtonTapped(sender: AnyObject) {
+        profileName.text = "af"
+    }
+    
+    
     @IBAction func logOuButtonTapped(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn");
         NSUserDefaults.standardUserDefaults().synchronize();

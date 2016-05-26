@@ -24,7 +24,7 @@ class TableTableViewController: UITableViewController {
     func loadSampleEvents() {
         
         let photo1 = UIImage(named: "NOAL")!
-        let event1 = Event(name: "NOAL", photo: photo1, date: "28-05-2016", details:"Este evento bla srea laopfh poaj ag limpus fasder ro latitif ya sim pois..", link:"www.tecnico.ulisboa.pt", org:"Instituto Superior Técnico")!
+        let event1 = Event(name:"NOAL", photo: photo1, date: "28-05-2016", details:"ATENÇÂO: Confirmar presença no facebook não conta como inscrição. Para se inscrever, dirija-se ao link no final do texto.\n A atividade mensal das NOAL será realizada no sábado 28–maio–2016 no Planetário Calouste Gulbenkian. A sessão deste mês terá início com a palestra às 21:30. Após a palestra haverá um pequeno espetáculo de música e efeitos na cúpula do Planetário. As observações astronómicas decorrerão em contínuo ao longo da noite, até às 24:00. \n A palestra é subordinada ao tema O Lado Escuro da Força, por Tiago Barreiro, do Instituto de Astrofísica e Ciências do Espaço.", link:"www.oal.ul.pt/inscricoes/", org:"IACE")!
         
         let photo2 = UIImage(named: "Doing Workshop")!
         let event2 = Event(name: "Doing Workshop", photo: photo2, date: "12-06-2016", details:"Este evento bla srea laopfh poaj ag limpus fasder ro latitif ya sim pois..", link:"www.tecnico.ulisboa.pt", org:"Instituto Superior Técnico")!
@@ -89,8 +89,6 @@ class TableTableViewController: UITableViewController {
         cell.dateLabel.text = event.date
         cell.orgLabel.text = event.org
 
-    
-        //performSegueWithIdentifier("Detail", sender: self)
         return cell
         
     }

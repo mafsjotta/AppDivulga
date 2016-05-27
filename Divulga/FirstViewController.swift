@@ -96,8 +96,20 @@ class FirstViewController: UIViewController {
         } else {
             createEvent(eventStore, title: detailEvent!.name, startDate: startDate!, endDate: endDate!)
         }
+        
+        let myAlert = UIAlertController(title:"Done", message: "The event was added to your calendar",preferredStyle: UIAlertControllerStyle.Alert);
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){action in
+            self.dismissViewControllerAnimated(true, completion: nil);
+        }
+        
+        myAlert.addAction(okAction);
+        self.presentViewController(myAlert, animated: true, completion: nil);
+        
     }
     
+       
     
 }
+
 

@@ -74,7 +74,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         NSUserDefaults.standardUserDefaults().setObject(userPass, forKey: "userPass")
         NSUserDefaults.standardUserDefaults().synchronize();
         
-        var myAlert = UIAlertController(title:"Congrats!!!", message: "You are now registred",preferredStyle: UIAlertControllerStyle.Alert);
+        var myAlert = UIAlertController(title:"Congrats!!!", message: "You are now registered",preferredStyle: UIAlertControllerStyle.Alert);
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){action in
             self.dismissViewControllerAnimated(true, completion: nil);

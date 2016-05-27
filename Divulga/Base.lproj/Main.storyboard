@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="136" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="3On-fZ-UXg" id="jJ7-cB-bNa">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bwV-0W-5FI">
@@ -143,7 +143,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dc-PT-jbE">
-                                        <rect key="frame" x="20" y="204" width="280" height="21"/>
+                                        <rect key="frame" x="20" y="204" width="280" height="17"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Date">
                                                 <attributes>
@@ -181,10 +181,17 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOt-wU-9Rq">
-                                        <rect key="frame" x="20" y="247" width="280" height="330"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Dm2-Ji-9is">
+                                        <rect key="frame" x="95" y="286" width="130" height="30"/>
+                                        <state key="normal" title="Add to Calendar"/>
+                                        <connections>
+                                            <action selector="addEvent:" destination="9pv-A4-QxB" eventType="touchUpInside" id="5GJ-6O-GOX"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOt-wU-9Rq">
+                                        <rect key="frame" x="20" y="253" width="280" height="18"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="330" id="jwh-9I-1hC"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="330" id="B5S-aQ-X2m"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Details">
@@ -197,38 +204,31 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Dm2-Ji-9is">
-                                        <rect key="frame" x="95" y="598" width="130" height="30"/>
-                                        <state key="normal" title="Add to Calendar"/>
-                                        <connections>
-                                            <action selector="addEvent:" destination="9pv-A4-QxB" eventType="touchUpInside" id="5GJ-6O-GOX"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="BOt-wU-9Rq" firstAttribute="top" secondItem="3jU-TG-007" secondAttribute="bottom" constant="8" id="1So-HZ-WL9"/>
                                     <constraint firstItem="Dm2-Ji-9is" firstAttribute="leading" secondItem="Qeg-Xv-wbk" secondAttribute="leading" constant="95" id="6QB-1l-gbR"/>
                                     <constraint firstItem="NDu-za-PhM" firstAttribute="centerX" secondItem="myj-pm-xhi" secondAttribute="centerX" id="6dC-gb-Kgv"/>
-                                    <constraint firstAttribute="bottom" secondItem="Dm2-Ji-9is" secondAttribute="bottom" constant="59" id="Ads-w8-1r8"/>
+                                    <constraint firstItem="BOt-wU-9Rq" firstAttribute="centerX" secondItem="Dm2-Ji-9is" secondAttribute="centerX" id="9Ya-hf-ODf"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Dm2-Ji-9is" secondAttribute="bottom" constant="59" id="Ads-w8-1r8"/>
+                                    <constraint firstItem="Dm2-Ji-9is" firstAttribute="top" secondItem="BOt-wU-9Rq" secondAttribute="bottom" constant="15" id="FGI-gx-FjU"/>
                                     <constraint firstItem="myj-pm-xhi" firstAttribute="top" secondItem="Qeg-Xv-wbk" secondAttribute="top" id="FQf-Id-K5Y"/>
                                     <constraint firstItem="8dc-PT-jbE" firstAttribute="top" secondItem="dML-Lm-omL" secondAttribute="bottom" constant="8" symbolic="YES" id="KE9-d2-LvA"/>
                                     <constraint firstItem="dML-Lm-omL" firstAttribute="leading" secondItem="8dc-PT-jbE" secondAttribute="leading" id="KUT-dC-C6n"/>
                                     <constraint firstItem="myj-pm-xhi" firstAttribute="centerX" secondItem="Qeg-Xv-wbk" secondAttribute="centerX" id="LgE-PW-fWA"/>
-                                    <constraint firstItem="3jU-TG-007" firstAttribute="leading" secondItem="BOt-wU-9Rq" secondAttribute="leading" id="NRP-2V-Fdp"/>
                                     <constraint firstItem="myj-pm-xhi" firstAttribute="leading" secondItem="Qeg-Xv-wbk" secondAttribute="leading" id="PUw-6c-11X"/>
-                                    <constraint firstItem="8dc-PT-jbE" firstAttribute="trailing" secondItem="BOt-wU-9Rq" secondAttribute="trailing" id="QDO-PY-kbB"/>
                                     <constraint firstItem="NDu-za-PhM" firstAttribute="trailing" secondItem="dML-Lm-omL" secondAttribute="trailing" id="Syh-oh-F1i"/>
                                     <constraint firstItem="dML-Lm-omL" firstAttribute="trailing" secondItem="8dc-PT-jbE" secondAttribute="trailing" id="VES-85-aBi"/>
                                     <constraint firstAttribute="trailing" secondItem="myj-pm-xhi" secondAttribute="trailing" id="Z8t-du-DJX"/>
                                     <constraint firstItem="NDu-za-PhM" firstAttribute="leading" secondItem="Qeg-Xv-wbk" secondAttribute="leading" constant="20" id="dk8-0b-atw"/>
+                                    <constraint firstItem="BOt-wU-9Rq" firstAttribute="centerX" secondItem="3jU-TG-007" secondAttribute="centerX" id="jbG-tS-aUC"/>
                                     <constraint firstItem="3jU-TG-007" firstAttribute="top" secondItem="dML-Lm-omL" secondAttribute="bottom" constant="28" id="jqd-z7-lav"/>
+                                    <constraint firstAttribute="bottom" secondItem="BOt-wU-9Rq" secondAttribute="bottom" constant="416" id="kYP-bR-1gH"/>
                                     <constraint firstItem="NDu-za-PhM" firstAttribute="top" secondItem="myj-pm-xhi" secondAttribute="bottom" constant="8" symbolic="YES" id="n4N-e4-Kks"/>
                                     <constraint firstItem="8dc-PT-jbE" firstAttribute="leading" secondItem="3jU-TG-007" secondAttribute="leading" id="piP-UT-dNc"/>
-                                    <constraint firstItem="Dm2-Ji-9is" firstAttribute="centerX" secondItem="BOt-wU-9Rq" secondAttribute="centerX" id="rsd-h2-ukz"/>
-                                    <constraint firstItem="BOt-wU-9Rq" firstAttribute="top" secondItem="3jU-TG-007" secondAttribute="bottom" constant="2" id="sQm-XQ-mFc"/>
-                                    <constraint firstItem="BOt-wU-9Rq" firstAttribute="top" secondItem="8dc-PT-jbE" secondAttribute="bottom" constant="22" id="sa2-Ut-4cP"/>
                                     <constraint firstItem="NDu-za-PhM" firstAttribute="leading" secondItem="dML-Lm-omL" secondAttribute="leading" id="u4N-8Z-nGD"/>
-                                    <constraint firstItem="Dm2-Ji-9is" firstAttribute="top" secondItem="BOt-wU-9Rq" secondAttribute="bottom" constant="21" id="vos-w8-0Sw"/>
                                     <constraint firstItem="dML-Lm-omL" firstAttribute="top" secondItem="NDu-za-PhM" secondAttribute="bottom" id="ybK-2b-JjS"/>
+                                    <constraint firstItem="BOt-wU-9Rq" firstAttribute="leading" secondItem="Qeg-Xv-wbk" secondAttribute="leadingMargin" constant="12" id="ym7-RF-9Ev"/>
                                 </constraints>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="30" maxX="10" maxY="0.0"/>
                             </scrollView>

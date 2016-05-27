@@ -8,11 +8,13 @@
 
 import UIKit
 import MapKit
+import EventKit
+
 
 class FirstViewController: UIViewController {
     
     var events = [Event]()
-    
+    var savedEventId : String = ""
     
     var detailEvent: Event? {
         didSet {
@@ -25,6 +27,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var name2Label: UILabel!
  
     @IBOutlet weak var org2Label: UILabel!
+    @IBOutlet weak var enddateLabel: UILabel!
     
     @IBOutlet weak var date2Label: UILabel!
     
@@ -33,15 +36,16 @@ class FirstViewController: UIViewController {
     
     func configureView() {
         if let detailEvent = detailEvent {
-            if let name2Label = name2Label, imageView = imageView, org2Label = org2Label, date2Label = date2Label, detailsText = detailsText {
+            if let name2Label = name2Label, imageView = imageView, org2Label = org2Label, date2Label = date2Label,enddateLabel = enddateLabel, detailsText = detailsText {
                 
                 org2Label.text = detailEvent.org
                 name2Label.text = detailEvent.name
                 imageView.image = UIImage(named: detailEvent.name)
                 date2Label.text = detailEvent.date
+                enddateLabel.text = detailEvent.dateEnd
                 detailsText.text = detailEvent.details
                 detailsText.sizeToFit()
-
+              
             }
         }
     }
@@ -57,7 +61,42 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {
+        let event = EKEvent(eventStore: eventStore)
+        
+        event.title = detailEvent!.name
+        event.startDate = startDate
+        event.endDate = endDate
+        event.calendar = eventStore.defaultCalendarForNewEvents
+        do {
+            try eventStore.saveEvent(event, span: .ThisEvent)
+            savedEventId = event.eventIdentifier
+        } catch {
+            print("Bad things happened")
+        }
+    }
     
+    @IBAction func addEvent(sender: AnyObject) {
+        
+        let eventStore = EKEventStore()
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        var startDate = dateFormatter.dateFromString(self.detailEvent!.date)
+       
+       var endDate = dateFormatter.dateFromString(self.detailEvent!.dateEnd)
+        
+        if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
+            eventStore.requestAccessToEntityType(.Event, completion: {
+                granted, error in
+                self.createEvent(eventStore, title:
+                self.detailEvent!.name, startDate: startDate!, endDate: endDate!)
+            })
+        } else {
+            createEvent(eventStore, title: detailEvent!.name, startDate: startDate!, endDate: endDate!)
+        }
+    }
     
     
 }

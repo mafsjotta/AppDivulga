@@ -65,7 +65,7 @@ class TableTableViewController: UITableViewController {
             }
             
             if eventosDB.open() {
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS EVENTOS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, DATE TEXT, ORGANIZATION TEXT)"
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS EVENTOS (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, org TEXT, ORGANIZATION TEXT)"
                 if !eventosDB.executeStatements(sql_stmt) {
                     print("Error: \(eventosDB.lastErrorMessage())")
                 }

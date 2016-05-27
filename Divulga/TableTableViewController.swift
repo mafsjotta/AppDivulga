@@ -34,7 +34,7 @@ class TableTableViewController: UITableViewController {
         
         events += [event1, event2, event3]
         
-    }
+        }
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +46,37 @@ class TableTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+        
+        let filemgr = NSFileManager.defaultManager()
+        let dirPaths =
+            NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
+                                                .UserDomainMask, true)
+        
+        let docsDir = dirPaths[0]
+        
+        databasePath = docsDir.stringByAppendingPathComponent("eventos.db")
+        
+        if !filemgr.fileExistsAtPath(databasePath as String) {
+            
+            let eventosDB = FMDatabase(path: databasePath as String)
+            
+            if eventosDB == nil {
+                print("Error: \(eventosDB.lastErrorMessage())")
+            }
+            
+            if eventosDB.open() {
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS EVENTOS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, DATE TEXT, ORGANIZATION TEXT)"
+                if !eventosDB.executeStatements(sql_stmt) {
+                    print("Error: \(eventosDB.lastErrorMessage())")
+                }
+                eventosDB.close()
+            } else {
+                print("Error: \(eventosDB.lastErrorMessage())")
+            }
+        }
     }
 
   
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -214,6 +241,16 @@ class TableTableViewController: UITableViewController {
 extension TableTableViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
+    }
+}
+
+extension String {
+    
+    func stringByAppendingPathComponent(path: String) -> String {
+        
+        let nsSt = self as NSString
+        
+        return nsSt.stringByAppendingPathComponent(path)
     }
 }
 

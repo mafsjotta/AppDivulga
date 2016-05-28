@@ -13,13 +13,11 @@ class TableTableViewController: UITableViewController {
     // MARK: Properties
     
     var events = [Event]()
-    var databasePath = NSString()
  
-   
     let searchController = UISearchController(searchResultsController: nil)
     var detailViewController: FirstViewController? = nil
     var filteredEvents = [Event]()
-
+    var filemanager = DatabaseManager()
     
     //
     // event(name: String, insc:Bool, photo: UIImage?, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: Int )
@@ -53,43 +51,28 @@ class TableTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+        
+        //filemanager.openDatabase()
+        //events = filemanager.query("SELECT * FROM evento")
+        //filemanager.closeDatabase()
             
-        let mainDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+       let mainDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             
-        // initialize FMDB
-        let db: FMDatabase = FMDatabase(path:mainDelegate.dbFilePath as String)
+       // initialize FMDB
+        let db: FMDatabase = FMDatabase(path:mainDelegate.dbPath as String)
         if !db.open() {
-            NSLog("error opening db")
+        NSLog("error opening db")
         }
+      
             
-            /*
-            // insert data
-            let addQuery = "INSERT INTO test_tb (name, keywordtext) VALUES ('excalibur', 'hot')"
-            let addSuccessful = db.executeUpdate(addQuery, withArgumentsInArray: nil)
-            if !addSuccessful {
-                print("insert failed: \(db.lastErrorMessage())")
-            }
-            // end insert data
-            
-            
-            // update data
-            let updateQuery = "UPDATE test_tb SET keywordtext = 'cool' WHERE name = 'excalibur' "
-            let updateSuccessful = db.executeUpdate(updateQuery, withArgumentsInArray: nil)
-            if !updateSuccessful {
-                print("update failed: \(db.lastErrorMessage())")
-            }
-            // end update
-            */
             
         // get data from db and store into array used by UITableView
         let mainQuery = "SELECT * FROM evento"
         let rsMain: FMResultSet? = db.executeQuery(mainQuery, withArgumentsInArray: nil)
     
             
-            
         while (rsMain!.next() == true) {
             let Nome = rsMain?.stringForColumn("nome")
-            NSLog("\(Nome)")
             let ins = rsMain?.intForColumn("insc")
             let organization = rsMain?.stringForColumn("org")
             let detalhes = rsMain?.stringForColumn("detalhes")
@@ -105,18 +88,7 @@ class TableTableViewController: UITableViewController {
             events.append(eventos!)
             NSLog("Pichum")   
         }
-        // end get data
-            
-        /*
-            // delete data
-            let delQuery = "DELETE FROM test_tb WHERE name = 'excalibur' "
-            let deleteSuccessful = db.executeUpdate(delQuery, withArgumentsInArray: nil)
-            if !deleteSuccessful {
-                print("delete failed: \(db.lastErrorMessage())")
-            }
-            // end delete data
-            */
-            
+    
             // example: get num rows
             if let rsTemp: FMResultSet? = db.executeQuery("SELECT COUNT(*) as numrows FROM evento", withArgumentsInArray: nil){
                 while rsTemp!.next(){
@@ -154,7 +126,7 @@ class TableTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        // Table view cells are reused and should be dequeued using a cell identifier.
+      // Table view cells are reused and should be dequeued using a cell identifier.
       let cellIdentifier = "EventTableViewCell"
       let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
         

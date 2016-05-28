@@ -59,14 +59,14 @@ class ThirdViewController: UIViewController {
     
     @IBAction func changesButtonTapped(sender: AnyObject) {
      
-        interests["Phy"] = physButton.isChecked
+/*        interests["Phy"] = physButton.isChecked
         interests["Mat"] = matButton.isChecked
         interests["Bio"] = bioButton.isChecked
         interests["Geo"] = geoButton.isChecked
         medButton.isChecked = interests["Med"]
         astButton.isChecked = interests["Ast"]!
         progButton.isChecked = interests["Pro"]!
-        eleButton.isChecked = interests["Ele"]!
+        eleButton.isChecked = interests["Ele"]! */
         
     }
 

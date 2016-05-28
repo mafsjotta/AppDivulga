@@ -82,11 +82,14 @@ class TableTableViewController: UITableViewController {
             */
             
         // get data from db and store into array used by UITableView
-        let mainQuery = "SELECT * FROM eventos"
+        let mainQuery = "SELECT * FROM evento"
         let rsMain: FMResultSet? = db.executeQuery(mainQuery, withArgumentsInArray: nil)
-        
+    
+            
+            
         while (rsMain!.next() == true) {
             let Nome = rsMain?.stringForColumn("nome")
+            NSLog("\(Nome)")
             let ins = rsMain?.intForColumn("insc")
             let organization = rsMain?.stringForColumn("org")
             let detalhes = rsMain?.stringForColumn("detalhes")
@@ -98,9 +101,9 @@ class TableTableViewController: UITableViewController {
             let linkSite = rsMain?.stringForColumn("link")
             
             let eventos = Event(name: Nome!, insc: ins!, photo: photo1! , date: datein! , dateEnd: dateen! , details: detalhes! ,link: linkSite! , org: organization!, topic: topico!, level: nivel! )
-               
+             NSLog("Picha")
             events.append(eventos!)
-                
+            NSLog("Pichum")   
         }
         // end get data
             
@@ -115,7 +118,7 @@ class TableTableViewController: UITableViewController {
             */
             
             // example: get num rows
-            if let rsTemp: FMResultSet? = db.executeQuery("SELECT COUNT(*) as numrows FROM eventos", withArgumentsInArray: nil){
+            if let rsTemp: FMResultSet? = db.executeQuery("SELECT COUNT(*) as numrows FROM evento", withArgumentsInArray: nil){
                 while rsTemp!.next(){
             let numrows = rsTemp?.intForColumn("numrows")
             NSLog("numrows: \(numrows)")

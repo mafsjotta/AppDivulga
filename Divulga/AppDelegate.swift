@@ -29,19 +29,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - FMDB
     
-    let DATABASE_RESOURCE_NAME = "eventos"
-    let DATABASE_RESOURCE_TYPE = "sqlite"
-    let DATABASE_FILE_NAME = "eventos.db"
+    let DATABASE_RESOURCE_NAME = "evento"
+    let DATABASE_RESOURCE_TYPE = "db"
+    let DATABASE_FILE_NAME = "evento.db"
     
     func initializeDb() -> Bool {
+        
         let documentFolderPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         
         let dbfile = "/" + DATABASE_FILE_NAME;
         
         self.dbFilePath = documentFolderPath.stringByAppendingString(dbfile)
-        
-        let filemanager = NSFileManager.defaultManager()
-        if (!filemanager.fileExistsAtPath(dbFilePath as String) ) {
+        NSLog("\(self.dbFilePath)")
+      /*  let filemanager = NSFileManager.defaultManager()
+       if (!filemanager.fileExistsAtPath(dbFilePath as String) ) {
             
             let backupDbPath = NSBundle.mainBundle().pathForResource(DATABASE_RESOURCE_NAME, ofType: DATABASE_RESOURCE_TYPE)
             
@@ -54,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("Fail")
                 }
             }
-        }
+        }*/
         return true
     }
     

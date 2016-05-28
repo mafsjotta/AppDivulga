@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - FMDB
     
     let DATABASE_RESOURCE_NAME = "eventos"
-    let DATABASE_RESOURCE_TYPE = "db"
+    let DATABASE_RESOURCE_TYPE = "sqlite"
     let DATABASE_FILE_NAME = "eventos.db"
     
     func initializeDb() -> Bool {

@@ -18,7 +18,7 @@ class Event {
     var photo: UIImage?
     var date: String
     var dateEnd: String
-    var insc: Bool
+    var insc: Int32
     var details: String
     var link: String
     var org: String
@@ -27,7 +27,7 @@ class Event {
     
     // MARK: Initialization
     
-    init?(name: String, insc:Bool, photo: UIImage?, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: Int32 ) {
+    init?(name: String, insc:Int32, photo: UIImage?, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: Int32 ) {
         
         // Initialize stored properties.
         self.name = name

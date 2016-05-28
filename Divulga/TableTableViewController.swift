@@ -39,6 +39,7 @@ class TableTableViewController: UITableViewController {
         events += [event1, event2, event3]
         
         }
+    
     func openDatabase(){
         let filemgr = NSFileManager.defaultManager()
         let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)

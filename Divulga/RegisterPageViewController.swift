@@ -48,7 +48,8 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         let userPass = userPassTextField.text;
         let rePass   = repeatPassTextField.text;
         
-        var userInterests: [String: Bool]=["Phy": physicsInterest.isChecked,
+        var userInterests: [String: Bool]=
+                                          ["Phy": physicsInterest.isChecked,
                                            "Mat": mathInterest.isChecked,
                                            "Bio": bioInterest.isChecked,
                                            "Geo": geoInterest.isChecked,
@@ -69,7 +70,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             displayMyAlertMessage("Passwords do not match");
         }
         
-        NSUserDefaults.standardUserDefaults().setObject(userInterests, forKey: "userInterests") 
+        NSUserDefaults.standardUserDefaults().setObject(userInterests, forKey: "userInterests")
         NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
         NSUserDefaults.standardUserDefaults().setObject(userPass, forKey: "userPass")
         NSUserDefaults.standardUserDefaults().synchronize();

@@ -87,6 +87,7 @@
 		1150ADBC1CEF6A2100E53944 /* TableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTableViewController.swift; sourceTree = "<group>"; };
 		11799C3F1CF0F7590022C7D1 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		11799C411CF0F95E0022C7D1 /* Divulga-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Divulga-Bridging-Header.h"; sourceTree = "<group>"; };
+		11F6B44F1CF9D801002ECA59 /* eventos.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = eventos.db; path = ../../eventos.db; sourceTree = "<group>"; };
 		9B0BDAD91CF782D8007758FD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9B147EEC1CF26D01001F8950 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				9B0BDAD91CF782D8007758FD /* libsqlite3.tbd */,
+				11799C3F1CF0F7590022C7D1 /* libsqlite3.0.tbd */,
+				11F6B44F1CF9D801002ECA59 /* eventos.db */,
 				1113554F1CF218C20013C129 /* FMDatabase.h */,
 				111355501CF218C20013C129 /* FMDatabaseAdditions.h */,
 				111355511CF218C20013C129 /* FMDatabasePool.h */,
@@ -133,7 +136,6 @@
 				111355471CF218A10013C129 /* FMDatabasePool.m */,
 				111355481CF218A10013C129 /* FMDatabaseQueue.m */,
 				111355491CF218A10013C129 /* FMResultSet.m */,
-				11799C3F1CF0F7590022C7D1 /* libsqlite3.0.tbd */,
 				1102FABA1CEE013600BC186F /* Divulga */,
 				1102FAD11CEE013600BC186F /* DivulgaTests */,
 				1102FADC1CEE013600BC186F /* DivulgaUITests */,

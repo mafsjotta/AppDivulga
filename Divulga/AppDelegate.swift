@@ -12,19 +12,52 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var databasePath: NSString = NSString()
-
+    var dbFilePath: NSString = NSString()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         let colour = UIColor(red: 0/255.0, green:186/255.0 , blue: 9/255.0 , alpha: 1.0 )
         UITabBar.appearance().tintColor = colour
         
+        if self.initializeDb() {
+            NSLog("Successful db copy")
+        }
 
-        
         return true
     }
-
+    
+    // MARK: - FMDB
+    
+    let DATABASE_RESOURCE_NAME = "eventos"
+    let DATABASE_RESOURCE_TYPE = "db"
+    let DATABASE_FILE_NAME = "eventos.db"
+    
+    func initializeDb() -> Bool {
+        let documentFolderPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        
+        let dbfile = "/" + DATABASE_FILE_NAME;
+        
+        self.dbFilePath = documentFolderPath.stringByAppendingString(dbfile)
+        
+        let filemanager = NSFileManager.defaultManager()
+        if (!filemanager.fileExistsAtPath(dbFilePath as String) ) {
+            
+            let backupDbPath = NSBundle.mainBundle().pathForResource(DATABASE_RESOURCE_NAME, ofType: DATABASE_RESOURCE_TYPE)
+            
+            if (backupDbPath == nil) {
+                return false
+            } else {
+                do{
+                    try filemanager.copyItemAtPath(backupDbPath!, toPath: dbFilePath as String)
+                }catch let error as NSError{
+                    print("Fail")
+                }
+            }
+        }
+        return true
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

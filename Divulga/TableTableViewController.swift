@@ -14,7 +14,7 @@ class TableTableViewController: UITableViewController {
     
     var events = [Event]()
     var databasePath = NSString()
-
+ 
    
     let searchController = UISearchController(searchResultsController: nil)
     var detailViewController: FirstViewController? = nil
@@ -39,36 +39,9 @@ class TableTableViewController: UITableViewController {
         events += [event1, event2, event3]
         
         }
-    func openDatabase(){
-        let filemgr = NSFileManager.defaultManager()
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)
-        
-        let docsDir = dirPaths[0]
-        databasePath = docsDir.stringByAppendingPathComponent("eventos.db")
-        
-        if !filemgr.fileExistsAtPath(databasePath as String) {
-            
-            let eventosDB = FMDatabase(path: databasePath as String)
-            
-            if eventosDB == nil {
-                print("Error: \(eventosDB.lastErrorMessage())")
-            }
-            
-            if eventosDB.open() {
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS EVENTOS (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT,insc NUMERIC, org TEXT, sitio TEXT, detalhes TEXT, imagem TEXT, link TEXT, datai TEXT, dataf TEXT, horain TEXT, horaf TEXT, topico TEXT, linkmapa TEXT, nivel INTEGER)"
-                if !eventosDB.executeStatements(sql_stmt) {
-                    print("Error: \(eventosDB.lastErrorMessage())")
-                }
-                eventosDB.close()
-                print("All coooool")
-            } else {
-                print("Error: \(eventosDB.lastErrorMessage())")
-            }
-        }
     
-    }
-   
-    override func viewDidLoad() {
+    
+        override func viewDidLoad() {
         super.viewDidLoad()
     
         // Load the sample data.
@@ -78,10 +51,75 @@ class TableTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+            
+            let mainDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            // initialize FMDB
+            let db: FMDatabase = FMDatabase(path:mainDelegate.dbFilePath as String)
+            if !db.open() {
+                NSLog("error opening db")
+            }
+            
+            /*
+            // insert data
+            let addQuery = "INSERT INTO test_tb (name, keywordtext) VALUES ('excalibur', 'hot')"
+            let addSuccessful = db.executeUpdate(addQuery, withArgumentsInArray: nil)
+            if !addSuccessful {
+                print("insert failed: \(db.lastErrorMessage())")
+            }
+            // end insert data
+            
+            
+            // update data
+            let updateQuery = "UPDATE test_tb SET keywordtext = 'cool' WHERE name = 'excalibur' "
+            let updateSuccessful = db.executeUpdate(updateQuery, withArgumentsInArray: nil)
+            if !updateSuccessful {
+                print("update failed: \(db.lastErrorMessage())")
+            }
+            // end update
+            */
+            
+            // get data from db and store into array used by UITableView
+            let mainQuery = "SELECT name,  FROM test_tb"
+            let rsMain: FMResultSet? = db.executeQuery(mainQuery, withArgumentsInArray: [])
+            
+            while (rsMain!.next() == true) {
+                let Nome = rsMain?.stringForColumn("nome")
+                let ins = rsMain?.boolForColumn("insc")
+                let organization = rsMain?.stringForColumn("org")
+                let detalhes = rsMain?.stringForColumn("detalhes")
+                let datein = rsMain?.stringForColumn("datai")
+                let dateen = rsMain?.stringForColumn("dataf")
+                let topico = rsMain?.stringForColumn("topico")
+                let nivel = rsMain?.intForColumn("nivel")
+                let photo1 = UIImage(named: Nome!)
+                let linkSite = rsMain?.stringForColumn("link")
+                
+                let eventos = Event(name: Nome!, insc: ins!, photo: photo1! , date: datein! , dateEnd: dateen! , details: detalhes! ,link: linkSite! , org: organization!, topic: topico!, level: nivel! )
+               
+                //self.dataArray.append(eventos)
+                
+            }
+            // end get data
+            
+            // delete data
+            let delQuery = "DELETE FROM test_tb WHERE name = 'excalibur' "
+            let deleteSuccessful = db.executeUpdate(delQuery, withArgumentsInArray: nil)
+            if !deleteSuccessful {
+                print("delete failed: \(db.lastErrorMessage())")
+            }
+            // end delete data
+            
+            // example: get num rows
+            let rsTemp: FMResultSet? = db.executeQuery("SELECT count(*) AS numrows FROM test_tb", withArgumentsInArray: [])
+            rsTemp!.next()
+            let numrows = rsTemp?.intForColumn("numrows")
+            
+            NSLog("numrows: \(numrows)")
+            // end get num rows
+            
+            db.close()
         
-        //open or create database
-        openDatabase()
-
        
     }
 
@@ -95,7 +133,7 @@ class TableTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-        return 1
+        return 19
     }
 
     
@@ -231,13 +269,5 @@ extension TableTableViewController: UISearchResultsUpdating {
     }
 }
 
-extension String {
-    
-    func stringByAppendingPathComponent(path: String) -> String {
-        
-        let nsSt = self as NSString
-        
-        return nsSt.stringByAppendingPathComponent(path)
-    }
-}
+
 

@@ -23,11 +23,11 @@ class Event {
     var link: String
     var org: String
     var topic: String
-    var level: Int
+    var level: Int32
     
     // MARK: Initialization
     
-    init?(name: String, insc:Bool, photo: UIImage?, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: Int ) {
+    init?(name: String, insc:Bool, photo: UIImage?, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: Int32 ) {
         
         // Initialize stored properties.
         self.name = name

@@ -69,7 +69,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             displayMyAlertMessage("Passwords do not match");
         }
         
-        NSUserDefaults.standardUserDefaults().setObject(userInterests, forKey: "userInterests")
+        NSUserDefaults.standardUserDefaults().setObject(userInterests, forKey: "userInterests") 
         NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
         NSUserDefaults.standardUserDefaults().setObject(userPass, forKey: "userPass")
         NSUserDefaults.standardUserDefaults().synchronize();

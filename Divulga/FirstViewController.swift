@@ -32,7 +32,6 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var date2Label: UILabel!
     
     @IBOutlet weak var detailsText: UILabel!
- 
     
     func configureView() {
         if let detailEvent = detailEvent {
@@ -76,38 +75,49 @@ class FirstViewController: UIViewController {
         }
     }
     
-    @IBAction func addEvent(sender: AnyObject) {
+    
+    @IBAction func linkButton(sender: AnyObject) {
         
-        let eventStore = EKEventStore()
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        
-        var startDate = dateFormatter.dateFromString(self.detailEvent!.date)
-       
-       var endDate = dateFormatter.dateFromString(self.detailEvent!.dateEnd)
-        
-        if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
-            eventStore.requestAccessToEntityType(.Event, completion: {
-                granted, error in
-                self.createEvent(eventStore, title:
-                self.detailEvent!.name, startDate: startDate!, endDate: endDate!)
-            })
-        } else {
-            createEvent(eventStore, title: detailEvent!.name, startDate: startDate!, endDate: endDate!)
-        }
-        
-        let myAlert = UIAlertController(title:"Done", message: "The event was added to your calendar",preferredStyle: UIAlertControllerStyle.Alert);
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){action in
-            self.dismissViewControllerAnimated(true, completion: nil);
-        }
-        
-        myAlert.addAction(okAction);
-        self.presentViewController(myAlert, animated: true, completion: nil);
-        
+        let openLink = NSURL(string : "http://amitnkalra.github.io")
+        UIApplication.sharedApplication().openURL(openLink!)
     }
     
+    
+    @IBAction func addEvent(sender: AnyObject) {
+        
+        
+            let eventStore = EKEventStore()
+        
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+            var startDate = dateFormatter.dateFromString(self.detailEvent!.date)
+       
+            var endDate = dateFormatter.dateFromString(self.detailEvent!.dateEnd)
+        
+            if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
+                eventStore.requestAccessToEntityType(.Event, completion: {
+                granted, error in
+                    self.createEvent(eventStore, title:
+                        self.detailEvent!.name, startDate: startDate!, endDate: endDate!)
+                })
+            } else {
+                createEvent(eventStore, title: detailEvent!.name, startDate: startDate!, endDate: endDate!)
+        
+            }
+        
+        
+            let myAlert = UIAlertController(title:"Done", message: "The event was added to your calendar",preferredStyle: UIAlertControllerStyle.Alert);
+        
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){action in
+                self.dismissViewControllerAnimated(true, completion: nil);
+            }
+        
+            myAlert.addAction(okAction);
+            self.presentViewController(myAlert, animated: true, completion: nil);
+        
+        
+    }
        
     
 }

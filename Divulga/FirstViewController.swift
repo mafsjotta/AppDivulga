@@ -103,7 +103,8 @@ class FirstViewController: UIViewController {
                 })
             } else {
                 createEvent(eventStore, title: detailEvent!.name, startDate: startDate!, endDate: endDate!)
-        
+                var disableMyButton = sender as? UIButton
+                disableMyButton?.enabled = false
             }
         
         

@@ -14,24 +14,34 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     
+    @IBOutlet weak var physButton: CheckBox!
+    
+    
+    
     let defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
+        let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
+        
+        
         let username  = defaults.objectForKey("userName") as? String ?? String()
         //let password  = defaults.objectForKey("userPass")
         
         profileName.text = username
+        
+        physButton.isChecked = interests["Phy"]!
         // Do any additional setup after loading the view.
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
+
     
 
     @IBAction func editButtonTapped(sender: AnyObject) {

@@ -454,9 +454,16 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="zwX-8I-H2g"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="astButton" destination="jik-dm-COn" id="lwu-7G-e0D"/>
+                        <outlet property="bioButton" destination="lXK-TX-vjG" id="D0m-hu-les"/>
+                        <outlet property="eleButton" destination="BhB-Vd-F92" id="h6i-Q2-TwS"/>
+                        <outlet property="geoButton" destination="ugx-DK-GCw" id="Yl3-5i-J69"/>
+                        <outlet property="matButton" destination="AX0-CI-5v7" id="Ln1-Ox-lmx"/>
+                        <outlet property="medButton" destination="cGV-Vv-cSq" id="YCL-7X-WZI"/>
                         <outlet property="physButton" destination="EMo-qt-riw" id="3lB-nY-QyY"/>
                         <outlet property="profileName" destination="X08-Jk-mPs" id="GCo-MW-dY6"/>
                         <outlet property="profilePicture" destination="wSV-80-bBd" id="OsA-pw-bLn"/>
+                        <outlet property="progButton" destination="jF3-qM-DzG" id="R5h-5V-e4F"/>
                         <segue destination="49e-Tb-3d3" kind="modal" identifier="logOutView" id="VsH-ZG-pbo"/>
                     </connections>
                 </viewController>

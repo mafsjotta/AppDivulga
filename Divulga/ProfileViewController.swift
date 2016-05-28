@@ -15,6 +15,13 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var profilePicture: UIImageView!
     
     @IBOutlet weak var physButton: CheckBox!
+    @IBOutlet weak var matButton: CheckBox!
+    @IBOutlet weak var bioButton: CheckBox!
+    @IBOutlet weak var geoButton: CheckBox!
+    @IBOutlet weak var medButton: CheckBox!
+    @IBOutlet weak var astButton: CheckBox!
+    @IBOutlet weak var progButton: CheckBox!
+    @IBOutlet weak var eleButton: CheckBox!
     
     
     
@@ -31,6 +38,13 @@ class ThirdViewController: UIViewController {
         profileName.text = username
         
         physButton.isChecked = interests["Phy"]!
+        matButton.isChecked = interests["Mat"]!
+        bioButton.isChecked = interests["Bio"]!
+        geoButton.isChecked = interests["Geo"]!
+        medButton.isChecked = interests["Med"]!
+        astButton.isChecked = interests["Ast"]!
+        progButton.isChecked = interests["Pro"]!
+        eleButton.isChecked = interests["Ele"]!
         // Do any additional setup after loading the view.
     }
     

@@ -120,12 +120,12 @@
                   moduleName = "Divulga"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/JoseSenart/Desktop/Te%CC%81cnico/2%C2%BASem/LID/AppDivulga/Divulga/RegisterPageViewController.swift"
-                  timestampString = "485982610.197123"
+                  timestampString = "486246440.681141"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "56">
+                  offsetFromSymbolStart = "34">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -135,12 +135,12 @@
                   moduleName = "Divulga"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/JoseSenart/Desktop/Te%CC%81cnico/2%C2%BASem/LID/AppDivulga/Divulga/RegisterPageViewController.swift"
-                  timestampString = "485982610.197311"
+                  timestampString = "486246440.681348"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "72">
+                  offsetFromSymbolStart = "47">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -150,12 +150,12 @@
                   moduleName = "Divulga"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/JoseSenart/Desktop/Te%CC%81cnico/2%C2%BASem/LID/AppDivulga/Divulga/RegisterPageViewController.swift"
-                  timestampString = "485982610.197444"
+                  timestampString = "486246440.681582"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "868">
+                  offsetFromSymbolStart = "689">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -165,12 +165,12 @@
                   moduleName = "Divulga"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/JoseSenart/Desktop/Te%CC%81cnico/2%C2%BASem/LID/AppDivulga/Divulga/RegisterPageViewController.swift"
-                  timestampString = "485982610.197575"
+                  timestampString = "486246440.681902"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "816">
+                  offsetFromSymbolStart = "606">
                </Location>
             </Locations>
          </BreakpointContent>

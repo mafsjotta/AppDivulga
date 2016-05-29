@@ -13,8 +13,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var database:FMDatabase!
-    var dbPath: NSString = NSString()
+
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,22 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let colour = UIColor(red: 0/255.0, green:186/255.0 , blue: 9/255.0 , alpha: 1.0 )
         UITabBar.appearance().tintColor = colour
         
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
-        let documentsDir = paths.firstObject as! String
-        print("Path to the Documents directory\n\(documentsDir)")
-        
         return true
     }
     
     // MARK: - FMDB
     
-    
-    
+     /*
     func openDatabase()-> Bool{
         
         //let resourcePath = NSBundle.mainBundle().resourceURL!.absoluteString
         //let dbPath = resourcePath.stringByAppendingString("evento.db")
-        /*
+       
          let documentFolderPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
          let documentsDir = documentFolderPath.firstObject as! String
          let dbPath = documentsDir.stringByAppendingString("evento.db")
@@ -51,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          self.database = database;
          }
          
-         */
+ 
         let DATABASE_RESOURCE_NAME = "evento"
         let DATABASE_RESOURCE_TYPE = "db"
         
@@ -76,9 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-    
-    
-    
+    */
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

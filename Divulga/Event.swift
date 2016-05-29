@@ -27,7 +27,7 @@ class Event {
     
     // MARK: Initialization
     
-    init?(name: String, insc:Int32, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: Int32, imagelink: String ) {
+    init?(name: String, insc:Int32, org: String, details:String,imagelink: String,link: String, date: String, dateEnd: String, topic:String, level: Int32 ) {
         
         // Initialize stored properties.
         self.name = name

@@ -28,7 +28,6 @@
 		114634531CF09AD200FED52D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114634521CF09AD200FED52D /* EventTableViewCell.swift */; };
 		1150ADBD1CEF6A2100E53944 /* TableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150ADBC1CEF6A2100E53944 /* TableTableViewController.swift */; };
 		11FE3CF91CFB986700A9936E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE3CF81CFB986700A9936E /* Event.swift */; };
-		11FE3CFB1CFB998F00A9936E /* evento.db in Resources */ = {isa = PBXBuildFile; fileRef = 11FE3CFA1CFB998F00A9936E /* evento.db */; };
 		9B0BDADA1CF782D8007758FD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BDAD91CF782D8007758FD /* libsqlite3.tbd */; };
 		9B147EED1CF26D01001F8950 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B147EEC1CF26D01001F8950 /* CheckBox.swift */; };
 /* End PBXBuildFile section */
@@ -86,7 +85,6 @@
 		11799C3F1CF0F7590022C7D1 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		11799C411CF0F95E0022C7D1 /* Divulga-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Divulga-Bridging-Header.h"; sourceTree = "<group>"; };
 		11FE3CF81CFB986700A9936E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		11FE3CFA1CFB998F00A9936E /* evento.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = evento.db; sourceTree = "<group>"; };
 		9B0BDAD91CF782D8007758FD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9B147EEC1CF26D01001F8950 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,7 +161,6 @@
 				114634521CF09AD200FED52D /* EventTableViewCell.swift */,
 				1150ADBC1CEF6A2100E53944 /* TableTableViewController.swift */,
 				1102FAC11CEE013600BC186F /* Main.storyboard */,
-				11FE3CFA1CFB998F00A9936E /* evento.db */,
 				9B147EEC1CF26D01001F8950 /* CheckBox.swift */,
 				111355311CF202C00013C129 /* MainTabController.swift */,
 				1102FAC41CEE013600BC186F /* Assets.xcassets */,
@@ -302,7 +299,6 @@
 				1102FAC81CEE013600BC186F /* LaunchScreen.storyboard in Resources */,
 				1102FAC51CEE013600BC186F /* Assets.xcassets in Resources */,
 				1102FAC31CEE013600BC186F /* Main.storyboard in Resources */,
-				11FE3CFB1CFB998F00A9936E /* evento.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

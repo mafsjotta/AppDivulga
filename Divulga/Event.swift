@@ -7,29 +7,27 @@
 //
 
 import UIKit
-import CoreData
 
-class Event:NSManagedObject {
+
+class Event {
     
     
     // MARK: Properties
     
-    @NSManaged var name: String
-    //var photo: UIImage
-    @NSManaged var date: String
-    @NSManaged var dateEnd: String
-    @NSManaged var insc: String
-    @NSManaged var details: String
-    @NSManaged var link: String
-    @NSManaged var org: String
-    @NSManaged var topic: String
-    @NSManaged var level: String
-    @NSManaged var imagelink: String
-
+    var name: String
+    var date: String
+    var dateEnd: String
+    var insc: Int32
+    var details: String
+    var link: String
+    var org: String
+    var topic: String
+    var level: Int32
+    var imagelink: String
     
     // MARK: Initialization
     
-    init?(name: String, insc:String, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: String, imagelink: String) {
+    init?(name: String, insc:Int32, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: Int32, imagelink: String ) {
         
         // Initialize stored properties.
         self.name = name
@@ -43,7 +41,7 @@ class Event:NSManagedObject {
         self.topic = topic
         self.level = level
         self.imagelink = imagelink
-        
+
         
         
         // Initialization should fail if there is no name
@@ -51,5 +49,4 @@ class Event:NSManagedObject {
             return nil
         }
     }
-
 }

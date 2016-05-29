@@ -16,22 +16,24 @@ class FirstViewController: UIViewController {
     var events = [Event]()
     var savedEventId : String = ""
     
-    var detailEvent: ManagedEvent? {
+    var detailEvent: Event? {
         didSet {
             configureView()
         }
     }
-
+    
     @IBOutlet weak var imageView: UIImageView!
-
+    
     @IBOutlet weak var name2Label: UILabel!
- 
+    
     @IBOutlet weak var org2Label: UILabel!
     @IBOutlet weak var enddateLabel: UILabel!
     
     @IBOutlet weak var date2Label: UILabel!
     
     @IBOutlet weak var detailsText: UILabel!
+    
+   
     
     func configureView() {
         if let detailEvent = detailEvent {
@@ -51,12 +53,9 @@ class FirstViewController: UIViewController {
                         guard let data = data where error == nil else { return }
                         print(response?.suggestedFilename ?? "")
                         print("Download Finished")
-                        self.imageView.image = UIImage(data: data)!
-                    }
-                }
-
-              
-            }
+                        self.imageView.image = UIImage(data: data)!            }
+        }
+    }
         }
     }
     
@@ -64,13 +63,13 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
-            }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {
         let event = EKEvent(eventStore: eventStore)
         
@@ -95,54 +94,55 @@ class FirstViewController: UIViewController {
         UIApplication.sharedApplication().openURL(openLink!)
     }
 
+    
     // sacar imagem na net
-    
-    
     func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
         NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
             completion(data: data, response: response, error: error)
             }.resume()
     }
-        
+    
+    
     
     @IBAction func addEvent(sender: AnyObject) {
         
         
-            let eventStore = EKEventStore()
+        let eventStore = EKEventStore()
         
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         
-            var startDate = dateFormatter.dateFromString(self.detailEvent!.date)
-       
-            var endDate = dateFormatter.dateFromString(self.detailEvent!.dateEnd)
+        var startDate = dateFormatter.dateFromString(self.detailEvent!.date)
         
-            if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
-                eventStore.requestAccessToEntityType(.Event, completion: {
+        var endDate = dateFormatter.dateFromString(self.detailEvent!.dateEnd)
+        
+        if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
+            eventStore.requestAccessToEntityType(.Event, completion: {
                 granted, error in
-                    self.createEvent(eventStore, title:
-                        self.detailEvent!.name, startDate: startDate!, endDate: endDate!)
-                })
-            } else {
-                createEvent(eventStore, title: detailEvent!.name, startDate: startDate!, endDate: endDate!)
-                var disableMyButton = sender as? UIButton
-                disableMyButton?.enabled = false
-            }
+                self.createEvent(eventStore, title:
+                    self.detailEvent!.name, startDate: startDate!, endDate: endDate!)
+            })
+        } else {
+            createEvent(eventStore, title: detailEvent!.name, startDate: startDate!, endDate: endDate!)
+            var disableMyButton = sender as? UIButton
+            disableMyButton?.enabled = false
+        }
         
         
-            let myAlert = UIAlertController(title:"Done", message: "The event was added to your calendar",preferredStyle: UIAlertControllerStyle.Alert);
+        let myAlert = UIAlertController(title:"Done", message: "The event was added to your calendar",preferredStyle: UIAlertControllerStyle.Alert);
         
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){action in
-                self.dismissViewControllerAnimated(true, completion: nil);
-            }
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){action in
+            self.dismissViewControllerAnimated(true, completion: nil);
+        }
         
-            myAlert.addAction(okAction);
-            self.presentViewController(myAlert, animated: true, completion: nil);
+        myAlert.addAction(okAction);
+        self.presentViewController(myAlert, animated: true, completion: nil);
         
         
     }
-       
     
+    
+
 }
 
 

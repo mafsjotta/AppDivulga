@@ -25,6 +25,8 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var astroInterest: CheckBox!
     @IBOutlet weak var progInterest: CheckBox!
     @IBOutlet weak var electroInterest: CheckBox!
+    @IBOutlet weak var Descr: UILabel!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +45,34 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         super.touchesBegan(touches, withEvent: event)
     }
     
+    @IBAction func levelButton(sender: AnyObject) {
+        
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            Descr.text = "Children only";
+        case 1:
+            Descr.text = "General audience";
+        case 2:
+            Descr.text = "Highschool students"
+        case 3:
+            Descr.text = "College students"
+        case 4:
+            Descr.text = "Grad students and teachers"
+        default:
+            break;
+        }
+    }
+    
+        
+    
+    
     @IBAction func registerButtonTapped(sender: AnyObject) {
         let userName = userNameTextField.text;
         let userPass = userPassTextField.text;
         let rePass   = repeatPassTextField.text;
         
-        var userInterests: [String: Bool]=
-                                          ["Phy": physicsInterest.isChecked,
+        var userInterests: [String: Bool]=["Phy": physicsInterest.isChecked,
                                            "Mat": mathInterest.isChecked,
                                            "Bio": bioInterest.isChecked,
                                            "Geo": geoInterest.isChecked,
@@ -60,14 +83,14 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
 
         
         if (userName!.isEmpty || userPass!.isEmpty || rePass!.isEmpty) {
-            displayMyAlertMessage("All fields are required");
+            displayMyMessage("All fields are required", userTitle: "Alert");
         }
         
         if userPass?.characters.count<6{
-            displayMyAlertMessage("Passwords must have at least 6 characters");
+            displayMyMessage("Passwords must have at least 6 characters", userTitle: "Alert");
         }
         if userPass != rePass {
-            displayMyAlertMessage("Passwords do not match");
+            displayMyMessage("Passwords do not match", userTitle: "Alert");
         }
         
         NSUserDefaults.standardUserDefaults().setObject(userInterests, forKey: "userInterests")
@@ -91,8 +114,8 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
 
 
 
-    func displayMyAlertMessage(userMessage:String){
-        var myAlert = UIAlertController(title:"Alert", message: userMessage,preferredStyle: UIAlertControllerStyle.Alert)
+    func displayMyMessage(userMessage:String, userTitle:String){
+        var myAlert = UIAlertController(title: userTitle, message: userMessage,preferredStyle: UIAlertControllerStyle.Alert)
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
         

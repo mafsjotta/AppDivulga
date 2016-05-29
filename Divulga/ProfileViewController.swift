@@ -58,15 +58,19 @@ class ThirdViewController: UIViewController {
 
     
     @IBAction func changesButtonTapped(sender: AnyObject) {
+        
+        var interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
      
-/*        interests["Phy"] = physButton.isChecked
+        interests["Phy"] = physButton.isChecked
         interests["Mat"] = matButton.isChecked
         interests["Bio"] = bioButton.isChecked
         interests["Geo"] = geoButton.isChecked
-        medButton.isChecked = interests["Med"]
-        astButton.isChecked = interests["Ast"]!
-        progButton.isChecked = interests["Pro"]!
-        eleButton.isChecked = interests["Ele"]! */
+        interests["Med"] = physButton.isChecked
+        interests["Ast"] = matButton.isChecked
+        interests["Pro"] = bioButton.isChecked
+        interests["Ele"] = geoButton.isChecked
+        
+        displayMyMessage("Changes Saved", userTitle: " ")
         
     }
 
@@ -79,6 +83,18 @@ class ThirdViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn");
         NSUserDefaults.standardUserDefaults().synchronize();
         self.performSegueWithIdentifier("logOutView", sender: self)
+    }
+    
+    
+    func displayMyMessage(userMessage:String, userTitle:String){
+        var myAlert = UIAlertController(title: userTitle, message: userMessage,preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        
+        myAlert.addAction(okAction)
+        
+        self.presentViewController(myAlert, animated:true, completion:nil)
+        
     }
 
     /*

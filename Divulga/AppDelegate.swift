@@ -13,8 +13,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var database:FMDatabase!
-    var dbPath: NSString = NSString()
+
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,63 +21,77 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let colour = UIColor(red: 0/255.0, green:186/255.0 , blue: 9/255.0 , alpha: 1.0 )
         UITabBar.appearance().tintColor = colour
         
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
-        let documentsDir = paths.firstObject as! String
-        print("Path to the Documents directory\n\(documentsDir)")
+        // Directório dos documentos da aplicação
+        //let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        //let documentsDir = paths.firstObject as! String
+        //print("Path to the Documents directory\n\(documentsDir)")
         
         return true
     }
-    
-    // MARK: - FMDB
-    
   
+    // MARK: - CSV Parser Methods
     
-    func openDatabase()-> Bool{
+    func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding) -> [(name:String, detail:String, price: String)]? {
         
-        //let resourcePath = NSBundle.mainBundle().resourceURL!.absoluteString
-        //let dbPath = resourcePath.stringByAppendingString("evento.db")
-        /*
-        let documentFolderPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
-        let documentsDir = documentFolderPath.firstObject as! String
-        let dbPath = documentsDir.stringByAppendingString("evento.db")
+        // Load the CSV file and parse it
+        let delimiter = ";"
+        var items:[(name:String, detail:String, price: String)]?
         
-        let database = FMDatabase(path: dbPath)
- 
-        /* Open database read-only. */
-        if (!database.openWithFlags(1)) {
-            print("Could not open database at \(dbPath).")
-        } else {
-            self.database = database;
-        }
-    
-*/
-        let DATABASE_RESOURCE_NAME = "evento"
-        let DATABASE_RESOURCE_TYPE = "db"
-
-        let documentFolderPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        
-        let dbPath = documentFolderPath.stringByAppendingString("evento.db")
-        NSLog("\(dbPath)")
-        let filemanager = NSFileManager.defaultManager()
-        if (!filemanager.fileExistsAtPath(dbPath as String) ) {
+        do {
+            let content = try String(contentsOfURL: contentsOfURL, encoding: encoding)
+            print(content)
+            items = []
+            let lines:[String] = content.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()) as [String]
             
-            let backupDbPath = NSBundle.mainBundle().pathForResource(DATABASE_RESOURCE_NAME, ofType: DATABASE_RESOURCE_TYPE)
-            
-            if (backupDbPath == nil) {
-                return false
-            } else {
-                do{
-                    try filemanager.copyItemAtPath(backupDbPath!, toPath: dbPath as String)
-                }catch let error as NSError{
-                    print("Fail")
+            for line in lines {
+                var values:[String] = []
+                if line != "" {
+                    // For a line with double quotes
+                    // we use NSScanner to perform the parsing
+                    if line.rangeOfString("\"") != nil {
+                        var textToScan:String = line
+                        var value:NSString?
+                        var textScanner:NSScanner = NSScanner(string: textToScan)
+                        while textScanner.string != "" {
+                            
+                            if (textScanner.string as NSString).substringToIndex(1) == "\"" {
+                                textScanner.scanLocation += 1
+                                textScanner.scanUpToString("\"", intoString: &value)
+                                textScanner.scanLocation += 1
+                            } else {
+                                textScanner.scanUpToString(delimiter, intoString: &value)
+                            }
+                            
+                            // Store the value into the values array
+                            values.append(value as! String)
+                            
+                            // Retrieve the unscanned remainder of the string
+                            if textScanner.scanLocation < textScanner.string.characters.count {
+                                textToScan = (textScanner.string as NSString).substringFromIndex(textScanner.scanLocation + 1)
+                            } else {
+                                textToScan = ""
+                            }
+                            textScanner = NSScanner(string: textToScan)
+                        }
+                        
+                        // For a line without double quotes, we can simply separate the string
+                        // by using the delimiter (e.g. comma)
+                    } else  {
+                        values = line.componentsSeparatedByString(delimiter)
+                    }
+                    
+                    // Put the values into the tuple and add it to the items array
+                    let item = (name: values[0], detail: values[1], price: values[2])
+                    items?.append(item)
                 }
             }
+            
+        } catch {
+            print(error)
         }
-        return true
+        
+        return items
     }
-    
-  
-    
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

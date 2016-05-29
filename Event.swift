@@ -15,24 +15,25 @@ class Event {
     // MARK: Properties
     
     var name: String
-    var photo: UIImage?
+    //var photo: UIImage
     var date: String
     var dateEnd: String
-    var insc: Int32
+    var insc: Int
     var details: String
     var link: String
     var org: String
     var topic: String
-    var level: Int32
+    var level: Int
+    var imagelink: String
+
     
     // MARK: Initialization
     
-    init?(name: String, insc:Int32, photo: UIImage?, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: Int32 ) {
+    init?(name: String, insc:Int, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: Int, imagelink: String) {
         
         // Initialize stored properties.
         self.name = name
         self.insc = insc
-        self.photo = photo
         self.date = date
         self.dateEnd = dateEnd
         self.details = details
@@ -41,7 +42,8 @@ class Event {
         self.dateEnd = dateEnd
         self.topic = topic
         self.level = level
-
+        self.imagelink = imagelink
+        
         
         
         // Initialization should fail if there is no name
@@ -49,4 +51,5 @@ class Event {
             return nil
         }
     }
+
 }

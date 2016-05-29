@@ -16,7 +16,7 @@ class FirstViewController: UIViewController {
     var events = [Event]()
     var savedEventId : String = ""
     
-    var detailEvent: Event? {
+    var detailEvent: ManagedEvent? {
         didSet {
             configureView()
         }

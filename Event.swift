@@ -7,29 +7,29 @@
 //
 
 import UIKit
+import CoreData
 
-
-class Event {
+class Event:NSManagedObject {
     
     
     // MARK: Properties
     
-    var name: String
+    @NSManaged var name: String
     //var photo: UIImage
-    var date: String
-    var dateEnd: String
-    var insc: Int
-    var details: String
-    var link: String
-    var org: String
-    var topic: String
-    var level: Int
-    var imagelink: String
+    @NSManaged var date: String
+    @NSManaged var dateEnd: String
+    @NSManaged var insc: String
+    @NSManaged var details: String
+    @NSManaged var link: String
+    @NSManaged var org: String
+    @NSManaged var topic: String
+    @NSManaged var level: String
+    @NSManaged var imagelink: String
 
     
     // MARK: Initialization
     
-    init?(name: String, insc:Int, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: Int, imagelink: String) {
+    init?(name: String, insc:String, date: String, dateEnd: String, details:String, link: String, org: String, topic:String, level: String, imagelink: String) {
         
         // Initialize stored properties.
         self.name = name

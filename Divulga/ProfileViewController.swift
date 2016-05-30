@@ -23,6 +23,7 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var progButton: CheckBox!
     @IBOutlet weak var eleButton: CheckBox!
     
+
     @IBOutlet weak var levelButton: UISegmentedControl!
     
     

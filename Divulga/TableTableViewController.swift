@@ -93,7 +93,7 @@ class TableTableViewController: UITableViewController {
         
         let event31 = Event(name:"A olhar para o céu!" ,insc:0 ,org:"MUHNAC" ,details:"O que estamos a ver quando olhamos para o céu? \n \n Na sessão, partimos do céu visível a olho nu, iremos das estrelas até Ã s galáxias próximas e mais distantes.\n \n Atividade destinada a público em geral e famí­lias | Sem marcação prévia \n Preço: 3,50€‚ p / pessoa \n Informações: geral@museus.ulisboa.pt | 213 921 808" ,imagelink:"http://www.museus.ulisboa.pt/sites/default/files/Planet%C3%A1rio_foto_10.jpg" ,link:"http://www.museus.ulisboa.pt/pt-pt/node/832" ,date:"18-06-2016 16:30" ,dateEnd:"18-06-2016 18:00" ,topic:"Astronomy" ,level: 2)!
         
-        let event32 = Event(name:" Clube de Robótica" ,insc:1 ,org:"MUHNAC" ,details:"Organizado pela embaixadora da FIRST LEGO League Portugal, Ana Raquel Silva, o objetivo do clube de robótica é entusiasmar os jovens e crianças para a ciência, tecnologia, engenharia e inovação." ,imagelink:"http://www.museus.ulisboa.pt/sites/default/files/Foto%20rob%C3%B3tica_0.jpg" ,link:"http://www.museus.ulisboa.pt/pt-pt/node/727" ,date:"19-06-2016 10:00" ,dateEnd:"26-06-2016 13:00" ,topic:"Programming, Electronics" ,level: 2)!
+        let event32 = Event(name:"Clube de Robótica" ,insc:1 ,org:"MUHNAC" ,details:"Organizado pela embaixadora da FIRST LEGO League Portugal, Ana Raquel Silva, o objetivo do clube de robótica é entusiasmar os jovens e crianças para a ciência, tecnologia, engenharia e inovação." ,imagelink:"http://www.museus.ulisboa.pt/sites/default/files/Foto%20rob%C3%B3tica_0.jpg" ,link:"http://www.museus.ulisboa.pt/pt-pt/node/727" ,date:"19-06-2016 10:00" ,dateEnd:"26-06-2016 13:00" ,topic:"Programming, Electronics" ,level: 2)!
         
         let event33 = Event(name:"Do Big-Bang ao observador cósmico - Visita orientada" ,insc:0 ,org:"MUHNAC" ,details:"A sucessão de eventos astronómicos, geológicos e biológicos que antecedem o aparecimento do ser humano... \n Participe! \n Atividade destinada ao público em geral e famí­lias com crianças a partir dos 9 anos. | Sem marcação prévia \n Preço: 3,50€ p/ pessoa \n Informações: geral@museus.ulisboa.pt | 213 921 808" ,imagelink:"http://www.museus.ulisboa.pt/sites/default/files/BigBangObservC%C3%B3smico.jpg" ,link:"http://www.museus.ulisboa.pt/pt-pt/node/838" ,date:"19-06-2016 16:00" ,dateEnd:"19-06-2016 17:30" ,topic:"Astronomy" ,level: 2)!
         
@@ -133,7 +133,7 @@ class TableTableViewController: UITableViewController {
        let event50 = Event(name: "A Cozinha é um Laboratório",insc: 1, org:"Pavilhão do Conhecimento", details:"Gomas de fruta\n \n Sabia que as gomas podem ser saudáveis e saborosas? Entre na Cozinha é um Laboratório e descubra como um gelificante extraído de algas nos poderá ajudar a confeccionar coloridas gomas de fruta. \n Famílias com crianças M/6 | 2€ por participante ou gratuito na compra do bilhete de acesso às exposições \n Inscrição on-line* ou no próprio dia na bilheteira",imagelink:"http://www.pavconhecimento.pt/media/objectos/607_l1_icones-ag-inic-04.png" ,link:"http://www.pavconhecimento.pt/visite-nos/actividades/detalhe.asp?id_obj=607", date: "2016-06-12 15:30",dateEnd: "2016-06-12 17:15", topic: "Chemistry", level:1)!
      
         
-    events += [event1, event2, event3, event4, event5, event6, event7, event8, event9, event10, event11, event12, event13, event14, event15, event16, event17, event18, event19, event20, event21, event22, event23, event24, event25, event26, event27, event28, event29, event30, event31, event32, event33, event34, event35, event36, event37, event38, event39, event40, event41, event42, event43, event44, event45, event46, event47, event48, event49, event50]
+    events += [event42, event6, event7, event22, event4, event8, event24, event43, event44, event9, event10, event25, event48, event26, event11, event12, event19, event15, event27, event50, event28, event46, event29, event30, event31, event32, event33, event20, event34, event35, event36, event45, event3, event47, event37, event38, event39, event2, event13, event14, event21, event16, event40, event1, event17, event41, event18, event5, event49, event23]
      
      }
     
@@ -149,7 +149,8 @@ class TableTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-        
+        searchController.searchBar.scopeButtonTitles = ["All", "Astronomy", "Physics", "Chemistry", "Medicine","Biology","Geology", "Programming", "Electronics"]
+        searchController.searchBar.delegate = self
         /*
         let mainDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -260,11 +261,12 @@ class TableTableViewController: UITableViewController {
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filteredEvents = events.filter { events in
-            return events.name.lowercaseString.containsString(searchText.lowercaseString)
+            let topicMatch = (scope == "All") || (events.topic == scope)
+            return  topicMatch && events.name.lowercaseString.containsString(searchText.lowercaseString)
         }
-        
         tableView.reloadData()
     }
+    
     
     /*
      // Override to support conditional editing of the table view.
@@ -353,9 +355,17 @@ class TableTableViewController: UITableViewController {
 
 extension TableTableViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
     }
 }
 
+
+extension TableTableViewController: UISearchBarDelegate {
+    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
 
 

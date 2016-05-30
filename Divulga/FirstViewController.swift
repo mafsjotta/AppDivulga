@@ -22,6 +22,7 @@ class FirstViewController: UIViewController {
         }
     }
     
+    var user: User!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var name2Label: UILabel!
@@ -143,6 +144,11 @@ class FirstViewController: UIViewController {
     
     
     @IBAction func favoritesButtonPressed(sender: AnyObject) {
+        var favorites = NSUserDefaults.standardUserDefaults().objectForKey("userFavorites") as? [Event] ?? [Event]()
+        
+        favorites.append(self.detailEvent!)
+        
+        NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "userFavorites");
         
     }
     

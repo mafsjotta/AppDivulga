@@ -40,14 +40,18 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
         profilePicture.layer.borderColor = UIColor(red:255.0/255.0, green:255.0/255.0, blue:255.0/255.0, alpha: 1.0).CGColor;
 
         
+        let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
+        let username  = defaults.objectForKey("userName") as? String ?? String()
+        let password  = defaults.objectForKey("userPass")
+        let level = defaults.integerForKey("userLevel")
+        let user =  User(userName: username, userPass:password! as! String, userInterests:interests, userLevel:level)
+        
+        
         if let imageData = NSUserDefaults.standardUserDefaults().objectForKey("userPicture"),
             let profPic = UIImage(data: imageData as! NSData){
             profilePicture.image = profPic
+            user.setpicture(profPic)
         }
-        let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
-        let username  = defaults.objectForKey("userName") as? String ?? String()
-        //let password  = defaults.objectForKey("userPass")
-        let userLevel = defaults.integerForKey("userLevel")
         
         
         profileName.text = username
@@ -62,7 +66,7 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
         eleButton.isChecked = interests["Ele"]!
         
 
-        switch userLevel
+        switch level
         {
         case 0:
             levelLabel.text = "Children only";
@@ -78,7 +82,7 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
             break;
         }
         
-        levelButton.selectedSegmentIndex = userLevel
+        levelButton.selectedSegmentIndex = level
         // Do any additional setup after loading the view.
     }
     
@@ -103,7 +107,6 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
         interests["Ast"] = astButton.isChecked
         interests["Pro"] = progButton.isChecked
         interests["Ele"] = eleButton.isChecked
-        
         
         
         NSUserDefaults.standardUserDefaults().setObject(UIImagePNGRepresentation(profilePicture.image!), forKey: "userPicture")

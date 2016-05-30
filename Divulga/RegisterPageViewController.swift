@@ -107,8 +107,11 @@ class RegisterPageViewController: UIViewController, UIImagePickerControllerDeleg
         let userName = userNameTextField.text;
         let userPass = userPassTextField.text;
         let rePass   = repeatPassTextField.text;
+        let level    = segmentedControl.selectedSegmentIndex
+        var favs: [Event]
+        favs = []
         
-        var userInterests: [String: Bool]=["Phy": physicsInterest.isChecked,
+        var interests: [String: Bool]=["Phy": physicsInterest.isChecked,
                                            "Mat": mathInterest.isChecked,
                                            "Bio": bioInterest.isChecked,
                                            "Geo": geoInterest.isChecked,
@@ -129,13 +132,11 @@ class RegisterPageViewController: UIViewController, UIImagePickerControllerDeleg
             displayMyMessage("Passwords do not match", userTitle: "Alert");
         }
         
-        NSUserDefaults.standardUserDefaults().setObject(UIImagePNGRepresentation(userProfilePicture.image!), forKey: "userPicture")
-
-        NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
-        NSUserDefaults.standardUserDefaults().setObject(userPass, forKey: "userPass")
-        NSUserDefaults.standardUserDefaults().setObject(userInterests, forKey: "userInterests")
-        NSUserDefaults.standardUserDefaults().setObject(segmentedControl.selectedSegmentIndex, forKey: "userLevel")
-        NSUserDefaults.standardUserDefaults().synchronize();
+        let user =  User(userName: userName!, userPass:userPass!, userInterests:interests, userLevel:level)
+        
+        user.setpicture(userProfilePicture.image!)
+        
+        NSUserDefaults.standardUserDefaults().setObject(favs, forKey: "userFavorites")
         
         var myAlert = UIAlertController(title:"Congrats!!!", message: "You are now registered",preferredStyle: UIAlertControllerStyle.Alert);
         

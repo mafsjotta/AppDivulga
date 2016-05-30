@@ -142,6 +142,11 @@ class FirstViewController: UIViewController {
     }
     
     
+    @IBAction func favoritesButtonPressed(sender: AnyObject) {
+        
+    }
+    
+    
 
 }
 

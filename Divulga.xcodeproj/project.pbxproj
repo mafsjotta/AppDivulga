@@ -30,6 +30,7 @@
 		11FE3CF91CFB986700A9936E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE3CF81CFB986700A9936E /* Event.swift */; };
 		9B147EED1CF26D01001F8950 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B147EEC1CF26D01001F8950 /* CheckBox.swift */; };
 		9B2E6CF11CFC4CBE003201BD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BDAD91CF782D8007758FD /* libsqlite3.tbd */; };
+		9B83DAB71CFCC31600A20329 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B83DAB61CFCC31600A20329 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		11FE3CF81CFB986700A9936E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		9B0BDAD91CF782D8007758FD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9B147EEC1CF26D01001F8950 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		9B83DAB61CFCC31600A20329 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				111355331CF2054B0013C129 /* LoginPageViewController.swift */,
 				111355351CF2058E0013C129 /* RegisterPageViewController.swift */,
 				11799C411CF0F95E0022C7D1 /* Divulga-Bridging-Header.h */,
+				9B83DAB61CFCC31600A20329 /* User.swift */,
 			);
 			path = Divulga;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				1113554D1CF218A10013C129 /* FMDatabaseQueue.m in Sources */,
 				1113554E1CF218A10013C129 /* FMResultSet.m in Sources */,
 				114634531CF09AD200FED52D /* EventTableViewCell.swift in Sources */,
+				9B83DAB71CFCC31600A20329 /* User.swift in Sources */,
 				1150ADBD1CEF6A2100E53944 /* TableTableViewController.swift in Sources */,
 				1102FAC01CEE013600BC186F /* SecondViewController.swift in Sources */,
 				11FE3CF91CFB986700A9936E /* Event.swift in Sources */,

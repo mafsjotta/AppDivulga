@@ -18,7 +18,7 @@ class TableTableViewController: UITableViewController {
     var detailViewController: FirstViewController? = nil
     var filteredEvents = [Event]()
     //var filemanager = DatabaseManager()
-    
+    let defaults = NSUserDefaults.standardUserDefaults()
     //
     // let event1= Event(name: String, insc:Int32, org: String, details:String,imagelink: String,link: String, date: String, dateEnd: String, topic:String, level: Int32 )!
     //
@@ -143,6 +143,16 @@ class TableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
+        var intList: [String];
+        intList = ["All"]
+        
+        for (interestName, isInterest) in interests {
+            if isInterest{
+                intList.append(interestName);
+            }
+        }
+        
         // Load the sample data.
         loadSampleEvents()
         
@@ -150,7 +160,7 @@ class TableTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-        searchController.searchBar.scopeButtonTitles = ["All", "Astronomy", "Physics", "Chemistry", "Medicine","Biology","Geology", "Programming", "Electronics"]
+        searchController.searchBar.scopeButtonTitles = intList
         searchController.searchBar.delegate = self
         /*
         let mainDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

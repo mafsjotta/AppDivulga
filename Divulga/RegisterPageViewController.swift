@@ -111,14 +111,14 @@ class RegisterPageViewController: UIViewController, UIImagePickerControllerDeleg
         var favs: [Event]
         favs = []
         
-        var interests: [String: Bool]=["Phy": physicsInterest.isChecked,
-                                           "Mat": mathInterest.isChecked,
-                                           "Bio": bioInterest.isChecked,
-                                           "Geo": geoInterest.isChecked,
-                                           "Med": medicineInterest.isChecked,
-                                           "Ast": astroInterest.isChecked,
-                                           "Pro": progInterest.isChecked,
-                                           "Ele": electroInterest.isChecked]
+        var interests: [String: Bool]=["Physics": physicsInterest.isChecked,
+                                           "Mathematics": mathInterest.isChecked,
+                                           "Biology": bioInterest.isChecked,
+                                           "Geology": geoInterest.isChecked,
+                                           "Medicine": medicineInterest.isChecked,
+                                           "Astronomy": astroInterest.isChecked,
+                                           "Programming": progInterest.isChecked,
+                                           "Electronics": electroInterest.isChecked]
 
         
         if (userName!.isEmpty || userPass!.isEmpty || rePass!.isEmpty) {

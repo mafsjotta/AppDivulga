@@ -877,15 +877,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Simbolo" translatesAutoresizingMaskIntoConstraints="NO" id="hzb-OA-Frd">
                                 <rect key="frame" x="39" y="9" width="242" height="242"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbz-w2-KMX">
-                                <rect key="frame" x="128" y="495" width="65" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Register"/>
-                                <connections>
-                                    <segue destination="5Iy-dx-3iW" kind="modal" identifier="registerView" id="koZ-m6-dzX"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVX-gj-BZ1">
                                 <rect key="frame" x="71" y="466" width="179" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -899,6 +890,15 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="BSN-GN-zwl" eventType="touchUpInside" id="YAG-UQ-qaB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbz-w2-KMX">
+                                <rect key="frame" x="128" y="501" width="65" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <segue destination="5Iy-dx-3iW" kind="modal" identifier="registerView" id="koZ-m6-dzX"/>
                                 </connections>
                             </button>
                         </subviews>

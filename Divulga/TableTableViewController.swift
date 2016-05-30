@@ -132,10 +132,25 @@ class TableTableViewController: UITableViewController {
         
        let event50 = Event(name: "A Cozinha é um Laboratório",insc: 1, org:"Pavilhão do Conhecimento", details:"Gomas de fruta\n \n Sabia que as gomas podem ser saudáveis e saborosas? Entre na Cozinha é um Laboratório e descubra como um gelificante extraído de algas nos poderá ajudar a confeccionar coloridas gomas de fruta. \n Famílias com crianças M/6 | 2€ por participante ou gratuito na compra do bilhete de acesso às exposições \n Inscrição on-line* ou no próprio dia na bilheteira",imagelink:"http://www.pavconhecimento.pt/media/objectos/607_l1_icones-ag-inic-04.png" ,link:"http://www.pavconhecimento.pt/visite-nos/actividades/detalhe.asp?id_obj=607", date: "2016-06-12 15:30",dateEnd: "2016-06-12 17:15", topic: "Chemistry", level:1)!
         
-        let event51 = Event(name: "Física Sobre Rodas",insc: 1, org:"NFIST", details:"A Física Sobre Rodas é um evento que conta com diversas atividades organizadas pelo NFIST e inteiramente dedicadas aos objetivos que se apresentam de seguida. Entre estas atividades incluem­se experiências de física, observações astronómicas, sessões de planetário, palestras e workshops. \n \n Programa:\n -Experiências do Circo da Física \n -Sessões de Planetário \n -Observações Astronómicas \n -Workshops \n -Palestras \n -Revista PULSAR \n A Física Sobre Rodas 2016 decorre ao longo do mês de Julho, em vários locais espalhados por Portugal.",imagelink:"https://scontent.xx.fbcdn.net/v/t1.0-9/12728805_1125285837495614_7351818647618704765_n.jpg?oh=e9ca2d219d92c3b3b956c504b8bdb118&oe=57D03058" ,link:"http://nfist.pt/", date: "2016-07-20 9:00",dateEnd: "2016-07-28 23:00", topic: "Physics", level:2)!
-     
+        let event51 = Event(name: "Física Sobre Rodas",insc: 1, org:"NFIST", details:"A Física Sobre Rodas é um evento que conta com diversas atividades organizadas pelo NFIST e inteiramente dedicadas aos objetivos que se apresentam de seguida. Entre estas atividades incluem­-se experiências de física, observações astronómicas, sessões de planetário, palestras e workshops. \n \n Programa:\n -Experiências do Circo da Física \n -Sessões de Planetário \n -Observações Astronómicas \n -Workshops \n -Palestras \n -Revista PULSAR \n A Física Sobre Rodas 2016 decorre ao longo do mês de Julho, em vários locais espalhados por Portugal.",imagelink:"https://scontent.xx.fbcdn.net/v/t1.0-9/12728805_1125285837495614_7351818647618704765_n.jpg?oh=e9ca2d219d92c3b3b956c504b8bdb118&oe=57D03058" ,link:"http://nfist.pt/", date: "2016-07-20 9:00",dateEnd: "2016-07-28 23:00", topic: "Physics", level:2)!
         
-    events += [event42, event6, event7, event22, event4, event8, event24, event43, event44, event9, event10, event25, event48, event26, event11, event12, event19, event15, event27, event50, event28, event46, event29, event30, event31, event32, event33, event20, event34, event35, event36, event45, event3, event47, event37, event38, event39, event2, event13, event14, event21, event16, event40, event1, event17, event41, event18, event51, event5, event49, event23]
+        let event52 = Event(name:"Estágio ATLAS" ,insc:1 ,org:"IST - LIP" ,details:"O LHC é actualmente o acelerador de hadrões mais potente do mundo que serve para estudar as partículas fundamentais. A nossa equipa faz parte da colaboração internacional de físicos e engenheiros que opera a gigantesca experiência ATLAS, no CERN. Este detector regista as colisões de protões ou de iões de chumbo acelerados pelo LHC, que analisamos em seguida, para procurar as respostas a algumas das questões mais fundamentais da física de hoje em dia.\n \n Neste estágio queremos dar uma visão do que é o trabalho de investigação em física de partículas, com foco na actividade portuguesa dentro da experiência ATLAS. Vamos integrar na nossa equipa estudantes a partir do 1º ciclo de física e engenharia física, para trabalhar em desafios concretos e actuais no desenvolvimento de detectores, na análise de física e em computação avançada:\n \n Estudo das propriedades do bosão de Higgs no LHC \nDesenvolvimento de algoritmos paralelos em processadores gráficos (GPUs) para a selecção de colisões em tempo real \n Estudo do plasma de quarks e gluões em colisões de iões pesados \n  Caracterização de fibras e cintiladores para o período de alta luminosidade do LHC \n \n O estágio terá uma duração entre 2 e 4 semanas, dependendo da disponibilidade dos estudantes, com início no dia 5 de Setembro. O programa de trabalho será adaptado ao background de cada estudante, e os resultados obtidos serão apresentados num workshop a realizar no dia 30 de Setembro." ,imagelink:"https://pbs.twimg.com/profile_images/567384601857765377/B4E4y9Ov.jpeg" ,link:"http://www.lip.pt/estagioatlas2016/" ,date:"05-09-2016 08:00" ,dateEnd:"06-10-2016 15:00" ,topic:"Physics" ,level: 4)!
+     
+        let event53 = Event(name:"8ª Escola de Astrofísica e Gravitação" ,insc:1 ,org:"IST - CENTRA" ,details:"Queres aprender o que são ondas gravitacionais? Como é que o universo evolui e como é podemos medir/observar essa evolução? Se sim então estás no lugar correto pois a EAG8 tem muitas respostas para ti.\n \nO CENTRA (Centro Multidisciplinar de Astrofísica) organiza pela oitava vez a sua prestigiada Escola de Astrofísica e Gravitação (EAG8). Esta escola, que tem lugar a cada dois anos, tem  como objectivo formar e incentivar novos talentos e actualizar interessados nas áreas de Astrofísica e Gravitação. Esta Escola de Verão é dirigida a alunos universitários de Física, de Matemática e de Engenharia. \n \n O principal critério de seleção é a média de curso, podendo ser dada prioridade aos alunos interessados em desenvolver investigação nas áreas de Astronomia, Astrofísica ou Gravitação. Estes alunos deverão referir o seu interesse nestas áreas na secção de Observações Relevantes no formulário de inscrição. Será também levada em conta, tanto quanto possível, uma distribuição geográfica homogénea. \n \n Este ano o CENTRA providenciará o almoço e suporte financeiro (a nivel da estadia) a alguns alunos que se desloquem de fora de Lisboa. As inscrições estão abertas até dia 30 de Junho e são limitadas portanto, inscreve-te já!" ,imagelink:"http://jornadasdefisica.nfist.pt/images/centra.png" ,link:"https://centra.tecnico.ulisboa.pt/pt/network/eag8" ,date:"01-09-2016 08:00" ,dateEnd:"06-09-2016 20:00" ,topic:"Physics" ,level: 4)!
+        
+        let event54 = Event(name:" Research Paper – Editing for Publication" ,insc:1 ,org:"IST" ,details:"A Estrutura de Formação Contínua informa que vai decorrer de 22 de junho a 1 de julho um novo curso de escrita científica em formato avançado destinado a todos os que já possuem alguns conhecimentos neste âmbito e pretendam aprofundar as suas competências na edição de todo o género de textos e relatórios científicos incluíndo “papers”, teses de doutoramento e dissertações de mestrado.\n \nResearch Paper – editing for publication (advanced writing course) é lecionado em língua inglesa num módulo de 24 horas. O programa, pode ser consultado no seguinte ficheiro." ,imagelink:"https://upload.wikimedia.org/wikipedia/pt/e/ed/IST_Logo.png" ,link:"http://da.tecnico.ulisboa.pt/arquivos/research-paper-editing-for-publication-advanced-writing-course-2/" ,date:"22-06-2016 17:30" ,dateEnd:"01-07-2016 20:30" ,topic:"General" ,level: 4)!
+        
+        let event55 = Event(name:"Light Cone 2016" ,insc:1 ,org:"ILCAC" ,details:"The main objective of the Light Cone 2016 conference series is to provide a yearly update of the knowledge in light-front theory and its phenomenological applications.\n \n Light-front theory provides a suitable framework to calculate observables such as scattering amplitudes, decay rates, spin effects, parton distributions, and other hadronic observables. Indirectly, a comparison of these calculations to experimental data can illuminate novel QCD effects.\n \nThe conferences of the series Light Cone are held each year under the auspices of the International Light Cone Advisory Committee (ILCAC) (http://www.ilcacinc.org) . \n \n An important aspect of the Conference series is to motivate and encourage young researchers in the field and prepare them for leadership roles. \n \n The LC2016 conference takes place at IST, Universidade de Lisboa, Portugal, from 5 to 8 September 2016.\n \n Topics to be included are:\n New frontiers and challenges in experimental Hadron Physics\nLight Front Field Theory in QCD and QED \n Non-perturbative methods in Quantum Field theory\n  Lattice Gauge Theories \n Relativistic models for hadrons and nuclei \n   Few-Body problems on the Light Cone. \n \n Registration: from 1st March to 25th August" ,imagelink:"http://www.lc2016.net/ficheiros/files/LC2016/LC2016_9.jpg" ,link:"http://www.lc2016.net/" ,date:"05-09-2016 8:00" ,dateEnd:"08-09-2016 22:00" ,topic:"Physics" ,level: 4)!
+        
+        let event56 = Event(name:"MIT Advanced Courses" ,insc:1 ,org:"IST - MIT" ,details:"The doctoral programs listed above were selected under the call from Fundação para a Ciência e a Tecnologia, IP (FCT,IP), through which ten scholarships per year per program are awarded to selected candidates. The jury of each doctoral program will select the candidates to receive the scholarships funded though the FCT,IP. The contract for each scholarship will be signed directly by the selected candidate and FCT. " ,imagelink:"https://pbs.twimg.com/profile_images/444233334781005824/Y8da5CzX.png" ,link:"http://www.mitportugal.org/application/applying.html" ,date:"04-07-2016 8:00" ,dateEnd:"05-09-2016 22:00" ,topic:"Physics" ,level: 5)!
+        
+        
+        let event57 = Event(name:"Workshop on Multi-Higgs Models" ,insc:1 ,org:"IST - CFTP" ,details:"Given LHC's Run 1, the ATLAS and CMS experiments at CERN could confidently announce the discovery a scalar particle of 125 GeV consistent with the Standard Model Higgs boson. François Englert and Peter W. Higgs have been awarded the Nobel Prize in Physics 2013 for the development of the symmetry breaking mechanism and its signature particle. LHC's Run 2 is scrutinizing the properties of the 125 GeV scalar to unprecedentend precision and probing whether there is indeed only one Higgs scalar or, perhaps, more. Indeed, in December 2015 ATLAS and CMS announced tantalizing signals of a second scalar resonance around 750 GeV. \n \nThis Workshop brings together those interested in the theory and phenomenology of Multi-Higgs models. The program is designed to include talks given by some of the leading experts in the field, and also ample time for discussions and collaboration betweeen researchers. A particular emphasis will be placed on identifying those features of the models testable at the LHC's Run 2.   " ,imagelink:"http://cftp.tecnico.ulisboa.pt/~2hdmwork/logos/logoCFTP_small.png" ,link:"http://cftp.tecnico.ulisboa.pt/~2hdmwork/" ,date:"06-09-2016 8:00" ,dateEnd:"09-09-2016 22:00" ,topic:"Physics" ,level: 5)!
+        
+        let event58 = Event(name:"Scientific Writing & Publication – research papers & thesis" ,insc:1 ,org:"IST" ,details:"A Estrutura de Formação Contínua da Direção Académica informa que vai decorrer de 6 a 14 de julho mais uma ação de formação destinada a todos os que pretendem adquirir competências no âmbito da escrita científica, apresentações e/ou comunicações de trabalhos científicos, como investigadores e alunos de doutoramento e/ou de mestrado que não dominem as técnicas necessárias para uma escrita eficaz no âmbito da divulgação da sua atividade científica. " ,imagelink:"https://upload.wikimedia.org/wikipedia/pt/e/ed/IST_Logo.png" ,link:"http://da.tecnico.ulisboa.pt/arquivos/scientific-writing-publication-research-papers-thesis-2/" ,date:"06-07-2016 17:30" ,dateEnd:"14-07-2016 20:30" ,topic:"General" ,level:4)!
+        
+        
+    events += [event42, event6, event7, event22, event4, event8, event24, event43, event44, event9, event10, event25, event48, event26, event11, event12, event19, event15, event27, event50, event28, event46, event29, event30, event31, event32, event33, event20, event34, event35, event36, event45, event54, event3, event47, event37, event38, event39, event2, event13, event14, event21, event56, event58, event16, event40, event1, event17, event41, event18, event51, event5, event53, event52, event49,event55, event57, event23]
      }
     
     
@@ -150,7 +165,7 @@ class TableTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-        searchController.searchBar.scopeButtonTitles = ["All", "Astronomy", "Physics", "Chemistry", "Medicine","Biology","Geology", "Programming", "Electronics"]
+        searchController.searchBar.scopeButtonTitles = ["All", "Astronomy", "Physics", "Chemistry", "Programming"]
         searchController.searchBar.delegate = self
         /*
         let mainDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -261,13 +276,14 @@ class TableTableViewController: UITableViewController {
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
-        filteredEvents = events.filter { events in
-            let topicMatch = (scope == "All") || (events.topic == scope)
-            return  topicMatch && events.name.lowercaseString.containsString(searchText.lowercaseString)
-        }
+        filteredEvents = events.filter ({( event : Event) -> Bool in
+            let topicMatch = (scope == "All") || (event.topic == scope)
+            return  topicMatch && event.name.lowercaseString.containsString(searchText.lowercaseString)
+        })
         tableView.reloadData()
     }
     
+
     
     /*
      // Override to support conditional editing of the table view.
@@ -344,16 +360,8 @@ class TableTableViewController: UITableViewController {
         self.presentViewController(myAlert, animated:true, completion:nil)
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-}
 
+}
 extension TableTableViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchBar = searchController.searchBar
@@ -362,9 +370,9 @@ extension TableTableViewController: UISearchResultsUpdating {
     }
 }
 
-
 extension TableTableViewController: UISearchBarDelegate {
     func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+
         filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
     }
 }

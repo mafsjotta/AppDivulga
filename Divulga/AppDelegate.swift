@@ -21,7 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let colour = UIColor(red: 0/255.0, green:186/255.0 , blue: 9/255.0 , alpha: 1.0 )
         UITabBar.appearance().tintColor = colour
-        
+        UISearchBar.appearance().barTintColor = UIColor.whiteColor()
+        UISearchBar.appearance().tintColor = colour
+        UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).tintColor = colour
+
         return true
     }
     

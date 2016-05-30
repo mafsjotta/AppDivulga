@@ -82,7 +82,7 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
     
     @IBAction func changesButtonTapped(sender: AnyObject) {
-        
+        NSLog("pikxa")
         var interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
      
         interests["Phy"] = physButton.isChecked

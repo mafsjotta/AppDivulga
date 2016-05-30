@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Divulga/RegisterPageViewController.swift"
-            timestampString = "485957451.641278"
+            timestampString = "486284718.667365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "RegisterPageViewController"
             landmarkType = "3">
             <Locations>
@@ -100,20 +100,20 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Divulga/RegisterPageViewController.swift"
-            timestampString = "485957468.992636"
+            timestampString = "486284718.667365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "RegisterPageViewController"
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Divulga.RegisterPageViewController.progInterest.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;Divulga.CheckBox&gt;"
@@ -128,7 +128,7 @@
                   offsetFromSymbolStart = "34">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Divulga.RegisterPageViewController.progInterest.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;Divulga.CheckBox&gt;"
@@ -143,7 +143,7 @@
                   offsetFromSymbolStart = "47">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Divulga.RegisterPageViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Divulga.RegisterPageViewController"
@@ -158,7 +158,7 @@
                   offsetFromSymbolStart = "689">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Divulga.RegisterPageViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Divulga.RegisterPageViewController&gt;"
@@ -182,11 +182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Divulga/RegisterPageViewController.swift"
-            timestampString = "486175580.301918"
+            timestampString = "486284718.667365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>

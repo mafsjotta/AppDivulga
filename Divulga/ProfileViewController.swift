@@ -23,6 +23,7 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var progButton: CheckBox!
     @IBOutlet weak var eleButton: CheckBox!
     
+    @IBOutlet weak var levelButton: UISegmentedControl!
     
     
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -30,10 +31,9 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
-        
-        
         let username  = defaults.objectForKey("userName") as? String ?? String()
         //let password  = defaults.objectForKey("userPass")
+        let userLevel = defaults.integerForKey("userLevel")
         
         profileName.text = username
         
@@ -45,6 +45,8 @@ class ThirdViewController: UIViewController {
         astButton.isChecked = interests["Ast"]!
         progButton.isChecked = interests["Pro"]!
         eleButton.isChecked = interests["Ele"]!
+        
+        levelButton.selectedSegmentIndex = userLevel
         // Do any additional setup after loading the view.
     }
     
@@ -65,11 +67,14 @@ class ThirdViewController: UIViewController {
         interests["Mat"] = matButton.isChecked
         interests["Bio"] = bioButton.isChecked
         interests["Geo"] = geoButton.isChecked
-        interests["Med"] = physButton.isChecked
-        interests["Ast"] = matButton.isChecked
-        interests["Pro"] = bioButton.isChecked
-        interests["Ele"] = geoButton.isChecked
+        interests["Med"] = medButton.isChecked
+        interests["Ast"] = astButton.isChecked
+        interests["Pro"] = progButton.isChecked
+        interests["Ele"] = eleButton.isChecked
         
+        NSUserDefaults.standardUserDefaults().setObject(interests, forKey: "userInterests")
+        NSUserDefaults.standardUserDefaults().synchronize();
+
         displayMyMessage("Changes Saved", userTitle: " ")
         
     }

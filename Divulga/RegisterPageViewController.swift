@@ -14,8 +14,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var userPassTextField: UITextField!
     @IBOutlet weak var repeatPassTextField: UITextField!
-
-    
+    var userLevel = 0;
     //Interests
     @IBOutlet weak var physicsInterest: CheckBox!
     @IBOutlet weak var mathInterest: CheckBox!
@@ -62,6 +61,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         default:
             break;
         }
+        userLevel = segmentedControl.selectedSegmentIndex
     }
     
         
@@ -93,9 +93,10 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             displayMyMessage("Passwords do not match", userTitle: "Alert");
         }
         
-        NSUserDefaults.standardUserDefaults().setObject(userInterests, forKey: "userInterests")
         NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
         NSUserDefaults.standardUserDefaults().setObject(userPass, forKey: "userPass")
+        NSUserDefaults.standardUserDefaults().setObject(userInterests, forKey: "userInterests")
+        NSUserDefaults.standardUserDefaults().setObject(segmentedControl.selectedSegmentIndex, forKey: "userLevel")
         NSUserDefaults.standardUserDefaults().synchronize();
         
         var myAlert = UIAlertController(title:"Congrats!!!", message: "You are now registered",preferredStyle: UIAlertControllerStyle.Alert);

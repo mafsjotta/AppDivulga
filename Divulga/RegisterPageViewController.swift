@@ -8,13 +8,15 @@
 
 import UIKit
 
-class RegisterPageViewController: UIViewController, UITextFieldDelegate {
+class RegisterPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var userPassTextField: UITextField!
     @IBOutlet weak var repeatPassTextField: UITextField!
+    @IBOutlet weak var userProfilePicture: UIImageView!
     var userLevel = 0;
+    
     //Interests
     @IBOutlet weak var physicsInterest: CheckBox!
     @IBOutlet weak var mathInterest: CheckBox!
@@ -71,7 +73,33 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         userLevel = segmentedControl.selectedSegmentIndex
     }
     
+    ////////////////////////////////////////////////////
+
+    @IBAction func selectProfilePicture(sender: UITapGestureRecognizer) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .PhotoLibrary
+        imagePickerController.delegate = self
+        presentViewController(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        // The info dictionary contains multiple representations of the image, and this uses the original.
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
+        // Set photoImageView to display the selected image.
+        userProfilePicture.image = selectedImage
+        
+        // Dismiss the picker.
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
+    
     ////////////////////////////////////////////////////
     
     @IBAction func registerButtonTapped(sender: AnyObject) {
@@ -100,6 +128,8 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
             displayMyMessage("Passwords do not match", userTitle: "Alert");
         }
         
+        NSUserDefaults.standardUserDefaults().setObject(UIImagePNGRepresentation(userProfilePicture.image!), forKey: "userPicture")
+
         NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
         NSUserDefaults.standardUserDefaults().setObject(userPass, forKey: "userPass")
         NSUserDefaults.standardUserDefaults().setObject(userInterests, forKey: "userInterests")

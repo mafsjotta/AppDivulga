@@ -40,29 +40,33 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
         profilePicture.layer.borderColor = UIColor(red:255.0/255.0, green:255.0/255.0, blue:255.0/255.0, alpha: 1.0).CGColor;
 
         
+        let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
+        let username  = defaults.objectForKey("userName") as? String ?? String()
+        let password  = defaults.objectForKey("userPass")
+        let level = defaults.integerForKey("userLevel")
+        let user =  User(userName: username, userPass:password! as! String, userInterests:interests, userLevel:level)
+        
+        
         if let imageData = NSUserDefaults.standardUserDefaults().objectForKey("userPicture"),
             let profPic = UIImage(data: imageData as! NSData){
             profilePicture.image = profPic
+            user.setpicture(profPic)
         }
-        let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
-        let username  = defaults.objectForKey("userName") as? String ?? String()
-        //let password  = defaults.objectForKey("userPass")
-        let userLevel = defaults.integerForKey("userLevel")
         
         
         profileName.text = username
         
-        physButton.isChecked = interests["Phy"]!
-        matButton.isChecked = interests["Mat"]!
-        bioButton.isChecked = interests["Bio"]!
-        geoButton.isChecked = interests["Geo"]!
-        medButton.isChecked = interests["Med"]!
-        astButton.isChecked = interests["Ast"]!
-        progButton.isChecked = interests["Pro"]!
-        eleButton.isChecked = interests["Ele"]!
+        physButton.isChecked = interests["Physics"]!
+        matButton.isChecked = interests["Mathematics"]!
+        bioButton.isChecked = interests["Biology"]!
+        geoButton.isChecked = interests["Geology"]!
+        medButton.isChecked = interests["Medicine"]!
+        astButton.isChecked = interests["Astronomy"]!
+        progButton.isChecked = interests["Programming"]!
+        eleButton.isChecked = interests["Electronics"]!
         
 
-        switch userLevel
+        switch level
         {
         case 0:
             levelLabel.text = "Children only";
@@ -78,7 +82,7 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
             break;
         }
         
-        levelButton.selectedSegmentIndex = userLevel
+        levelButton.selectedSegmentIndex = level
         // Do any additional setup after loading the view.
     }
     
@@ -95,15 +99,14 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
         NSLog("pikxa")
         var interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
      
-        interests["Phy"] = physButton.isChecked
-        interests["Mat"] = matButton.isChecked
-        interests["Bio"] = bioButton.isChecked
-        interests["Geo"] = geoButton.isChecked
-        interests["Med"] = medButton.isChecked
-        interests["Ast"] = astButton.isChecked
-        interests["Pro"] = progButton.isChecked
-        interests["Ele"] = eleButton.isChecked
-        
+        interests["Physics"] = physButton.isChecked
+        interests["Mathematics"] = matButton.isChecked
+        interests["Biology"] = bioButton.isChecked
+        interests["Geology"] = geoButton.isChecked
+        interests["Medicine"] = medButton.isChecked
+        interests["Astronomy"] = astButton.isChecked
+        interests["Programming"] = progButton.isChecked
+        interests["Electronics"] = eleButton.isChecked
         
         
         NSUserDefaults.standardUserDefaults().setObject(UIImagePNGRepresentation(profilePicture.image!), forKey: "userPicture")

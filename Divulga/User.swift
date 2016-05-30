@@ -15,7 +15,7 @@ class User: NSObject{
     var profilePicture: UIImage!
     var interests: [String: Bool]
     var level: Int
-    var favorites: []
+    var favorites: [Event]
     
     init(userName: String, userPass: String, userInterests: [String:Bool], userLevel: Int) {
         self.name       = userName;

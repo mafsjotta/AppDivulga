@@ -28,8 +28,8 @@
 		114634531CF09AD200FED52D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114634521CF09AD200FED52D /* EventTableViewCell.swift */; };
 		1150ADBD1CEF6A2100E53944 /* TableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150ADBC1CEF6A2100E53944 /* TableTableViewController.swift */; };
 		11FE3CF91CFB986700A9936E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE3CF81CFB986700A9936E /* Event.swift */; };
-		9B0BDADA1CF782D8007758FD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BDAD91CF782D8007758FD /* libsqlite3.tbd */; };
 		9B147EED1CF26D01001F8950 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B147EEC1CF26D01001F8950 /* CheckBox.swift */; };
+		9B2E6CF11CFC4CBE003201BD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0BDAD91CF782D8007758FD /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +83,7 @@
 		114634521CF09AD200FED52D /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		1150ADBC1CEF6A2100E53944 /* TableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTableViewController.swift; sourceTree = "<group>"; };
 		11799C3F1CF0F7590022C7D1 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		11799C411CF0F95E0022C7D1 /* Divulga-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Divulga-Bridging-Header.h"; sourceTree = "<group>"; };
+		11799C411CF0F95E0022C7D1 /* Divulga-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Divulga-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		11FE3CF81CFB986700A9936E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		9B0BDAD91CF782D8007758FD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9B147EEC1CF26D01001F8950 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B0BDADA1CF782D8007758FD /* libsqlite3.tbd in Frameworks */,
+				9B2E6CF11CFC4CBE003201BD /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +136,6 @@
 				1102FAD11CEE013600BC186F /* DivulgaTests */,
 				1102FADC1CEE013600BC186F /* DivulgaUITests */,
 				1102FAB91CEE013600BC186F /* Products */,
-				11799C411CF0F95E0022C7D1 /* Divulga-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +167,7 @@
 				1102FAC91CEE013600BC186F /* Info.plist */,
 				111355331CF2054B0013C129 /* LoginPageViewController.swift */,
 				111355351CF2058E0013C129 /* RegisterPageViewController.swift */,
+				11799C411CF0F95E0022C7D1 /* Divulga-Bridging-Header.h */,
 			);
 			path = Divulga;
 			sourceTree = "<group>";
@@ -258,7 +258,7 @@
 				TargetAttributes = {
 					1102FAB71CEE013600BC186F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = HR2TN4964Q;
+						DevelopmentTeam = 7VHQ5GXR2U;
 					};
 					1102FACD1CEE013600BC186F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -277,6 +277,24 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
+				de,
+				es,
+				eu,
+				fi,
+				fr,
+				it,
+				ja,
+				ko,
+				nl,
+				no,
+				pl,
+				pt,
+				ru,
+				sk,
+				sv,
+				vi,
+				zh_CN,
 			);
 			mainGroup = 1102FAAF1CEE013500BC186F;
 			productRefGroup = 1102FAB91CEE013600BC186F /* Products */;

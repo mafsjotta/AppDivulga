@@ -43,6 +43,8 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
+   
+    ////////////////////////////////////////////////////
     
     @IBAction func levelButton(sender: AnyObject) {
         
@@ -65,7 +67,7 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
     }
     
         
-    
+    ////////////////////////////////////////////////////
     
     @IBAction func registerButtonTapped(sender: AnyObject) {
         let userName = userNameTextField.text;
@@ -109,11 +111,13 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         self.presentViewController(myAlert, animated: true, completion: nil);
     }
     
+    ////////////////////////////////////////////////////
+    
     @IBAction func mindChangedButtonTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil);
     }
 
-
+    ////////////////////////////////////////////////////
 
     func displayMyMessage(userMessage:String, userTitle:String){
         var myAlert = UIAlertController(title: userTitle, message: userMessage,preferredStyle: UIAlertControllerStyle.Alert)

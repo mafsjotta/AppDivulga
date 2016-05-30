@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     
     @IBOutlet weak var profileName: UILabel!
@@ -25,12 +25,16 @@ class ThirdViewController: UIViewController {
     
 
     @IBOutlet weak var levelButton: UISegmentedControl!
+    @IBOutlet weak var levelLabel: UILabel!
     
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profilePicture.contentMode = .ScaleAspectFit
+        
         let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
         let username  = defaults.objectForKey("userName") as? String ?? String()
         //let password  = defaults.objectForKey("userPass")
@@ -46,6 +50,23 @@ class ThirdViewController: UIViewController {
         astButton.isChecked = interests["Ast"]!
         progButton.isChecked = interests["Pro"]!
         eleButton.isChecked = interests["Ele"]!
+        
+
+        switch userLevel
+        {
+        case 0:
+            levelLabel.text = "Children only";
+        case 1:
+            levelLabel.text = "General audience";
+        case 2:
+            levelLabel.text = "Highschool students"
+        case 3:
+            levelLabel.text = "College students"
+        case 4:
+            levelLabel.text = "Grad students and teachers"
+        default:
+            break;
+        }
         
         levelButton.selectedSegmentIndex = userLevel
         // Do any additional setup after loading the view.
@@ -73,22 +94,69 @@ class ThirdViewController: UIViewController {
         interests["Pro"] = progButton.isChecked
         interests["Ele"] = eleButton.isChecked
         
-        NSUserDefaults.standardUserDefaults().setObject(interests, forKey: "userInterests")
+        
+        //NSUserDefaults.standardUserDefaults().setObject(profilePicture, forKey: "userImage");
+        NSUserDefaults.standardUserDefaults().setObject(interests, forKey: "userInterests");
+        NSUserDefaults.standardUserDefaults().setObject(levelButton.selectedSegmentIndex, forKey: "userLevel")
         NSUserDefaults.standardUserDefaults().synchronize();
 
         displayMyMessage("Changes Saved", userTitle: " ")
         
     }
 
-    @IBAction func editButtonTapped(sender: AnyObject) {
-        profileName.text = "af"
-    }
     
     
     @IBAction func logOuButtonTapped(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn");
         NSUserDefaults.standardUserDefaults().synchronize();
         self.performSegueWithIdentifier("logOutView", sender: self)
+    }
+    
+    
+    
+    @IBAction func levelButton(sender: AnyObject) {
+        switch levelButton.selectedSegmentIndex
+        {
+        case 0:
+            levelLabel.text = "Children only";
+        case 1:
+            levelLabel.text = "General audience";
+        case 2:
+            levelLabel.text = "Highschool students"
+        case 3:
+            levelLabel.text = "College students"
+        case 4:
+            levelLabel.text = "Grad students and teachers"
+        default:
+            break;
+        }
+        //userLevel = levelButton.selectedSegmentIndex
+    }
+    
+    
+    
+    @IBAction func selectProfilePicture(sender: UITapGestureRecognizer) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .PhotoLibrary
+        imagePickerController.delegate = self
+        presentViewController(imagePickerController, animated: true, completion: nil)
+    }
+
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        // The info dictionary contains multiple representations of the image, and this uses the original.
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Set photoImageView to display the selected image.
+        profilePicture.image = selectedImage
+        
+        // Dismiss the picker.
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     

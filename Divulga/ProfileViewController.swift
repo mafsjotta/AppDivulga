@@ -33,7 +33,12 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profilePicture.contentMode = .ScaleAspectFit
+        profilePicture.contentMode = .ScaleAspectFill
+        profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2;
+        profilePicture.clipsToBounds = true;
+        profilePicture.layer.borderWidth = 3.0;
+        profilePicture.layer.borderColor = UIColor(red:255.0/255.0, green:255.0/255.0, blue:255.0/255.0, alpha: 1.0).CGColor;
+
         
         let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
         let username  = defaults.objectForKey("userName") as? String ?? String()

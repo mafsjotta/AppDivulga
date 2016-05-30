@@ -32,6 +32,7 @@ class RegisterPageViewController: UIViewController, UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userProfilePicture.contentMode = .ScaleAspectFit
 
         // Do any additional setup after loading the view.
     }

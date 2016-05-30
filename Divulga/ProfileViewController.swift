@@ -40,10 +40,15 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
         profilePicture.layer.borderColor = UIColor(red:255.0/255.0, green:255.0/255.0, blue:255.0/255.0, alpha: 1.0).CGColor;
 
         
+        if let imageData = NSUserDefaults.standardUserDefaults().objectForKey("userPicture"),
+            let profPic = UIImage(data: imageData as! NSData){
+            profilePicture.image = profPic
+        }
         let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
         let username  = defaults.objectForKey("userName") as? String ?? String()
         //let password  = defaults.objectForKey("userPass")
         let userLevel = defaults.integerForKey("userLevel")
+        
         
         profileName.text = username
         
@@ -100,7 +105,8 @@ class ThirdViewController: UIViewController, UIImagePickerControllerDelegate, UI
         interests["Ele"] = eleButton.isChecked
         
         
-        //NSUserDefaults.standardUserDefaults().setObject(profilePicture, forKey: "userImage");
+        
+        NSUserDefaults.standardUserDefaults().setObject(UIImagePNGRepresentation(profilePicture.image!), forKey: "userPicture")
         NSUserDefaults.standardUserDefaults().setObject(interests, forKey: "userInterests");
         NSUserDefaults.standardUserDefaults().setObject(levelButton.selectedSegmentIndex, forKey: "userLevel")
         NSUserDefaults.standardUserDefaults().synchronize();

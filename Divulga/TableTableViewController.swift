@@ -345,13 +345,6 @@ class TableTableViewController: UITableViewController {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
 }
 
 extension TableTableViewController: UISearchResultsUpdating {

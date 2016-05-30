@@ -26,11 +26,15 @@ class TableTableViewController: UITableViewController {
     
      func loadSampleEvents() {
      
-      
+        let event1 = Event(name:"NOAL", insc:1,org:"IACE", details:"\n ATENÇÂO: Confirmar presença no facebook não conta como inscrição. Para se inscrever, dirija-se ao link no final do texto.\n \n A atividade mensal das NOAL será realizada no sábado 28–maio–2016 no Planetário Calouste Gulbenkian. A sessão deste mês terá início com a palestra às 21:30. Após a palestra haverá um pequeno espetáculo de música e efeitos na cúpula do Planetário. As observações astronómicas decorrerão em contínuo ao longo da noite, até às 24:00. \n A palestra é subordinada ao tema \"O Lado Escuro da Força\", por Tiago Barreiro, do Instituto de Astrofísica e Ciências do Espaço.",imagelink:"http://oal.ul.pt/wp-content/uploads/2013/04/OALCentralUrsaMajorTrail-net.jpg", link:"http://www.oal.ul.pt/inscricoes/", date: "2016-05-28 21:30", dateEnd: "2016-05-29 00:00",  topic: "Astronomy, Physics", level: 2)!
+        
+        let event2 = Event(name: "Doing Workshop",insc: 1, org:"Pavilhão do Conhecimento",  details: "\n Meet the Maker \n No penúltimo sábado de cada mês, a Dòing recebe um Maker convidado. Entusiastas de tecnologia, artesãos, mecânicos ou cientistas, que vêm partilhar os seus próprios projectos esperando inspirar os seus. Estes workshops destinam-se a jovens e adultos curiosos, amantes do  DIY (do inglês Do-it-Yourself), habilidosos ou profissionais, com interesse em aprender ou desenvolver competências técnicas. \n Das 15.30 às 18.30 | M/14 | 10€ (inclui certificado de participação) | Inscrição on-line",imagelink:"http://www.pavconhecimento.pt/media/objectos/3686_l1_workshops-doing-banner--explorar-criar.png", link:"http://www.pavconhecimento.pt/visite-nos/actividades/detalhe.asp?id_obj=2798",date: "2016-06-04 16:00", dateEnd: "2016-06-04 18:30",topic: "Electronics", level: 1)!
      
         let event23 = Event(name: "Web Summit",insc: 1, org:" ", details:"The most important startup gathering on the planet. Join us to help write our next chapter in Lisbon on November 8-10: https://websummit.net/ . \n \"An extraordinary gathering of talent & energy with one goal: to help entrepreneurs network\" - Wired\n  \"It was a conference that lived up to, and even exceeded, the hype\" - The Wall Street Journal",imagelink:"http://www.hotpress.com/store/images/adm/15/15608/15608397_websummit460.jpg" ,link:"https://websummit.net", date: "2016-11-08 09:00",dateEnd: "2016-11-10 23:00", topic: "Programming, Electronics", level:3)!
+        
+        let event4 = Event(name: "A Cozinha é um Laboratório",insc: 1, org:"Pavilhão do Conhecimento", details:"Gomas de fruta\n \n Sabia que as gomas podem ser saudáveis e saborosas? Entre na Cozinha é um Laboratório e descubra como um gelificante extraído de algas nos poderá ajudar a confeccionar coloridas gomas de fruta. \n Famílias com crianças M/6 | 2€ por participante ou gratuito na compra do bilhete de acesso às exposições \n Inscrição on-line* ou no próprio dia na bilheteira",imagelink:"http://www.pavconhecimento.pt/media/objectos/607_l1_icones-ag-inic-04.png" ,link:"http://www.pavconhecimento.pt/visite-nos/actividades/detalhe.asp?id_obj=607", date: "2016-06-12 15:30",dateEnd: "2016-06-12 17:15", topic: "Chemistry", level:1)!
      
-     events += [event23]
+     events += [event1, event2, event4, event23]
      
      }
     

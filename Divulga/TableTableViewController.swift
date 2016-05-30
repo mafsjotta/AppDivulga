@@ -139,6 +139,27 @@ class TableTableViewController: UITableViewController {
      }
     
     
+    override func viewDidAppear(animated: Bool) {
+        let interests = defaults.objectForKey("userInterests") as? [String: Bool] ?? [String: Bool]()
+        var intList: [String];
+        intList = ["All"]
+        
+        for (interestName, isInterest) in interests {
+            if isInterest{
+                intList.append(interestName);
+            }
+        }
+        
+        loadSampleEvents()
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.scopeButtonTitles = intList
+        searchController.searchBar.delegate = self
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -271,9 +292,10 @@ class TableTableViewController: UITableViewController {
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
-        filteredEvents = events.filter { events in
-            let topicMatch = (scope == "All") || (events.topic == scope)
-            return  topicMatch && events.name.lowercaseString.containsString(searchText.lowercaseString)
+        filteredEvents = events.filter { event in
+            let topicMatch = (scope == "All") || (event.topic == scope)
+            NSLog("\(topicMatch)")
+            return  topicMatch && event.name.lowercaseString.containsString(searchText.lowercaseString)
         }
         tableView.reloadData()
     }

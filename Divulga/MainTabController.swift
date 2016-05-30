@@ -29,8 +29,9 @@ class MainTabController: UITabBarController {
         
         if(!isUserLoggedIn){
             self.performSegueWithIdentifier("logInView", sender: self);
-    }
+        }
 
+    }
     
     /*
     // MARK: - Navigation
@@ -41,6 +42,10 @@ class MainTabController: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
-
-}
+    
+    override func shouldAutorotate() -> Bool {return false}
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return [.Portrait, .PortraitUpsideDown]
+    }
 }

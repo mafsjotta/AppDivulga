@@ -26,6 +26,12 @@ class LoginPageViewController: UIViewController {
         super.touchesBegan(touches, withEvent: event)
     }
     
+    override func shouldAutorotate() -> Bool {return false}
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return [.Portrait, .PortraitUpsideDown]
+    }
+    
     @IBOutlet weak var userNameTextField: UITextField!
 
     @IBOutlet weak var userPassTextField: UITextField!

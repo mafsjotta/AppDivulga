@@ -44,6 +44,11 @@ class RegisterPageViewController: UIViewController, UITextFieldDelegate {
         super.touchesBegan(touches, withEvent: event)
     }
    
+    override func shouldAutorotate() -> Bool {return false}
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return [.Portrait, .PortraitUpsideDown]
+    }
     ////////////////////////////////////////////////////
     
     @IBAction func levelButton(sender: AnyObject) {

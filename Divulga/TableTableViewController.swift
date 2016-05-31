@@ -310,7 +310,6 @@ class TableTableViewController: UITableViewController {
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filteredEvents = events.filter { event in
             let topicMatch = (scope == "All") || (event.topic == scope)
-            NSLog("\(topicMatch)")
             return  topicMatch && event.name.lowercaseString.containsString(searchText.lowercaseString)
         }
         tableView.reloadData()

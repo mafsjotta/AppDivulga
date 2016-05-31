@@ -111,7 +111,7 @@ class FirstViewController: UIViewController {
         let eventStore = EKEventStore()
         
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         
         var startDate = dateFormatter.dateFromString(self.detailEvent!.date)
         

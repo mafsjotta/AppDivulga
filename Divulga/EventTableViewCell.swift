@@ -18,7 +18,6 @@ class EventTableViewCell: UITableViewCell {
 
     @IBOutlet weak var photoImageView: UIImageView!
     
-
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var orgLabel: UILabel!

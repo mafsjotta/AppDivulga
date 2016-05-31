@@ -142,7 +142,7 @@ class FirstViewController: UIViewController {
         
     }
     
-    
+    /*
     @IBAction func favoritesButtonPressed(sender: AnyObject) {
         var favorites = NSUserDefaults.standardUserDefaults().objectForKey("userFavorites") as? [Event] ?? [Event]()
         
@@ -151,6 +151,7 @@ class FirstViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().setObject(favorites, forKey: "userFavorites");
         
     }
+    */
     
     
 

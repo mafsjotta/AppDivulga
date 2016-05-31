@@ -255,12 +255,6 @@
                         <barButtonItem key="backBarButtonItem" title="Back" width="50" id="yny-va-91i">
                             <color key="tintColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xVN-XA-0oq">
-                            <color key="tintColor" red="0.1777847649" green="0.67277486909999995" blue="0.20172322079999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="favoritesButtonPressed:" destination="9pv-A4-QxB" id="T3H-R7-ACH"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
